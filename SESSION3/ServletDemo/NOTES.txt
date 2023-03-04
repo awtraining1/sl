@@ -1,0 +1,21 @@
+Recap of last week
+
+Servlet - POJO classes that extend HTTPServlet
+
+HelloServlet -> /HelloServlet , /HS /hs
+
+
+
+Listeners - POJO classes that we can implement to listen for events
+Session creation, session removals
+
+Filters - POJO classes
+
+// Example of Authentication filter logic
+		String userID = request.getParameter("userid");
+		if(userID==null) {
+			res.sendRedirect("login.html");
+		}else {
+			chain.doFilter(request, response);
+		}
+
