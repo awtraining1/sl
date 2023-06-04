@@ -1,0 +1,11 @@
+Copy these files from prev project
+
+pom.xml DONE (update the names as per the new project
+
+web.xml DONE
+main-servlet.xml DONE
+
+create view folder in WEB-INF DONE
+copy the index.jsp from webapp into WEB-INF/view DONE
+
+create java folder inside src/main DONE
