@@ -16,7 +16,7 @@ import com.ecommerce.beans.CustomEventPublisher;
 public class MainController {
 	
 	@RequestMapping(value = "/customevent", method = RequestMethod.GET)
-	public String customEvent(ModelMap map) {
+	public String abc(ModelMap map) {
 		
 		String confFile = "classpath:beans.xml";
 		ApplicationContext context = new ClassPathXmlApplicationContext(confFile);
