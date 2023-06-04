@@ -20,7 +20,7 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 	<context:component-scan
 		base-package="com.ecommerce.controller" />
 	<context:component-scan
-		base-package="com.ecommerce.beans" />
+		base-package="com.ecommerce.dao" />
 
 	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -54,6 +54,10 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="ds"></property>
 	</bean>
+
+	<bean id="dao" class="com.ecommerce.dao.EProductDAO">    
+                <property name="template" ref="jt"></property>    
+        </bean> 
 
 
 	<tx:annotation-driven />

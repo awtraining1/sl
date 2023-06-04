@@ -46,5 +46,15 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/HomeWk/.m2/repository/org/springframework/spring-jdbc/6.0.4/spring-jdbc-6.0.4.jar" sourcepath="C:/Users/HomeWk/.m2/repository/org/springframework/spring-jdbc/6.0.4/spring-jdbc-6.0.4-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="spring-jdbc-6.0.4.jar"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-jdbc"/>
+			<attribute name="maven.version" value="6.0.4"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
