@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import ecommerce.EProduct;
-import ecommerce.dao.EProductDAO;
+import com.ecommerce.EProduct;
+import com.ecommerce.dao.EProductDAO;
 
 @Controller
 public class ProductController {
