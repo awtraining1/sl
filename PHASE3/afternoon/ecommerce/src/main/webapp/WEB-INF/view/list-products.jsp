@@ -13,7 +13,7 @@
 
 
 <body>
- <c:forEach var="product" items="${list}">   
+ <c:forEach var="product" items="${listOfProducts}">   
    ${product.name}, ${product.price}, ${product.dateAdded}<br>  
  </c:forEach>  
 </body>
