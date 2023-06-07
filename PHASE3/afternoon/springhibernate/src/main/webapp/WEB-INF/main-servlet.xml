@@ -30,42 +30,50 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 		<property name="defaultEncoding" value="UTF-8"></property>
 	</bean>
 
-
 	<context:annotation-config />
 
 	<context:component-scan
 		base-package="com.ecommerce" />
 	<context:component-scan
 		base-package="com.ecommerce.dao" />
-		<context:component-scan
+	<context:component-scan
 		base-package="com.ecommerce.controller" />
 
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		p:location="/WEB-INF/jdbc.properties">
+	</bean>
+	
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
 		p:driverClassName="${jdbc.driverClassName}"
 		p:url="${jdbc.databaseurl}" p:username="${jdbc.username}"
 		p:password="${jdbc.password}"></bean>
 
-
-	<bean id="ds"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName"
-			value="com.mysql.jdbc.Driver"></property>
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/ecommerce"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="rootroot"></property>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="confi gLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration </value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.dialect}</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
 	</bean>
 
-	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="ds"></property>
-	</bean>
-
-	<bean id="dao" class="com.ecommerce.dao.EProductDAO">
-		<property name="template" ref="jt"></property>
-	</bean>
+	<bean id="eproductDAO" class="com.ecommerce.dao.EProductDAO"></bean>
 
 	<tx:annotation-driven />
-
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 
 </beans>
