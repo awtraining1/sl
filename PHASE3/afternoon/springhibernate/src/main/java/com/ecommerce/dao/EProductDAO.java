@@ -14,6 +14,7 @@ public class EProductDAO {
 	private SessionFactory sessionFactory;
 
 	// Business Methods
+	@Transactional 
 	@SuppressWarnings("unchecked")
 	public List<EProductEntity> getAllProducts() {
 		return this.sessionFactory.getCurrentSession().createQuery("from EProductEntity").list();
