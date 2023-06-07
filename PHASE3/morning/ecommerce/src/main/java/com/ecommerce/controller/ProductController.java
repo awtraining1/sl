@@ -12,24 +12,30 @@ import com.ecommerce.dao.EProductDAO;
 
 @Controller
 public class ProductController {
-	
+
 	@Autowired
 	EProductDAO eproductDAO;
-	
+
 	@RequestMapping(value = "/listProducts", method = RequestMethod.GET)
 	public String listProducts(ModelMap model) {
 		List<EProduct> listOfProducts = eproductDAO.getProducts();
-		
+
 		model.addAttribute("list", listOfProducts);
-		
+
 		return "listProducts"; // go to listProducts.jsp
 	}
-	
+
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-	public String addProduct(@RequestParam String name, @RequestParam float price ) {
+	public String addProduct(@RequestParam String name, @RequestParam float price) {
 		eproductDAO.addProduct(name, price);
-		
+
 		return "addProductSuccess"; // go to addProductSuccess.jsp
 	}
 
+	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
+	public String deleteProduct(@RequestParam int id) {
+		eproductDAO.deleteProduct(id);
+
+		return "deleteProductSuccess"; // go to deleteProductSuccess.jsp
+	}
 }

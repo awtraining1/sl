@@ -36,10 +36,15 @@ public class EProductDAO {
 		});
 
 	}
-	
-	public void addProduct(String name,float price) {
+
+	public void addProduct(String name, float price) {
 		String insertSQL = "insert into eproduct(name,price) values(?,?)";
-		template.update(insertSQL, new Object[] {name, price} );		
+		template.update(insertSQL, new Object[] { name, price });
+	}
+
+	public void deleteProduct(int id) {
+		String deleteSQL = "delete from eproduct where id=?";
+		template.update(deleteSQL, new Object[] { id });
 	}
 
 }
