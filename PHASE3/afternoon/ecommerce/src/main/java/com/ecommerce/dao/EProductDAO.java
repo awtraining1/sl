@@ -35,5 +35,12 @@ public class EProductDAO {
 		});
 
 	}
+	
+	// Add a product
+	public void addProduct(String name, float price) {
+		String insertSQL = "insert into eproduct(name,price) values(?,?)";
+		template.update(insertSQL, new Object[] {name, price});		
+	}
+	
 
 }

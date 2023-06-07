@@ -37,6 +37,8 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 		base-package="com.ecommerce" />
 	<context:component-scan
 		base-package="com.ecommerce.dao" />
+		<context:component-scan
+		base-package="com.ecommerce.controller" />
 
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
