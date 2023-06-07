@@ -4,8 +4,8 @@
 
 <a href="listProducts">List Products</a>
 <br><br>
-<a href="add-product.html">ADD Products</a>
-<a href="delete-product.html">DELETE Products</a>
+<a href="add-product.jsp">ADD Products</a>
+<a href="delete-product.jsp">DELETE Products</a>
 
 </body>
 </html>
