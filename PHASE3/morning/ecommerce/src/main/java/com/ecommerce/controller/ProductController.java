@@ -17,10 +17,19 @@ public class ProductController {
 	EProductDAO eproductDAO;
 	
 	@RequestMapping(value = "/listProducts", method = RequestMethod.GET)
-	public String listProducts(ModelMap map) {
-		List<EProduct> list = eproductDAO.getProducts();
-		map.addAttribute("list", list);
-		return "listProducts";
+	public String listProducts(ModelMap model) {
+		List<EProduct> listOfProducts = eproductDAO.getProducts();
+		
+		model.addAttribute("list", listOfProducts);
+		
+		return "listProducts"; // go to listProducts.jsp
+	}
+	
+	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
+	public String addProduct(@RequestParam String name, @RequestParam float price ) {
+		eproductDAO.addProduct(name, price);
+		
+		return "addProductSuccess"; // go to addProductSuccess.jsp
 	}
 
 }
