@@ -19,7 +19,7 @@
     
 	<properties>
 		<org.springframework.version>6.0.4</org.springframework.version>
-		<hibernate.version>5.6.15.Final</hibernate.version>
+		<hibernate.version>6.2.4.Final</hibernate.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>6.2.4.Final</version>
+			<version>${hibernate.version}</version>
 		</dependency>
 
 		<!--<dependency>
@@ -146,7 +146,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>ecommerce</finalName>
+		<finalName>${project.artifactId}</finalName>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
 			<plugins>

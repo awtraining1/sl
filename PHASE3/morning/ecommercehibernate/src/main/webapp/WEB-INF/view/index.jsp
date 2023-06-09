@@ -1,1 +1,1 @@
-<a href="/productList">Product List</a>
+<a href="products">Product List</a>

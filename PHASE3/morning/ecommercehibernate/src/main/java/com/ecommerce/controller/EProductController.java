@@ -16,12 +16,12 @@ public class EProductController {
 
 	@Autowired
 	EProductDAO eProductDAO;
-
-	@RequestMapping(value = "/productList", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String listProducts(ModelMap map) {
 		List<EProductEntity> list = eProductDAO.getAllProducts();
 		map.addAttribute("productList", list);
-		return "productList";
+		return "product-list";
 	}
 
 }
