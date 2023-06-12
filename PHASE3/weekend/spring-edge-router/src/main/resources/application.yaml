@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: productModule
+        uri: http://localhost:8081/
+        predicates:
+        - Path=/eproduct/**
+      - id: consumerModule
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/consumer/**
