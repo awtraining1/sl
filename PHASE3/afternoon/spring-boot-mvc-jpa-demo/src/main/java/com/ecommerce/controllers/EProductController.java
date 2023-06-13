@@ -1,5 +1,6 @@
 package com.ecommerce.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,14 +55,39 @@ public class EProductController {
 			return "edit-product-not-found"; // go to edit-product-not-found.jsp
 		}
 	}
-	
+
 	@PostMapping("/edit-product")
 	public String saveEditedProduct(@ModelAttribute("product") EProduct product, Model model) {
-		
+
 		eProductRepositry.save(product);
 		model.addAttribute("id", product.getID());
 
 		return "edit-product-saved-success"; // go to edit-product-saved-success.jsp
+	}
+
+	// Delete a Product
+	@GetMapping("/delete-product")
+	public String deleteProduct(@RequestParam int id, Model model) {
+		Optional<EProduct> productFromRepo = eProductRepositry.findById(id);
+
+		if (productFromRepo.isPresent()) {
+			eProductRepositry.deleteById(id);
+			model.addAttribute("id", id);
+			return "delete-product-success"; // go to delete-product-success.jsp
+		} else {
+			model.addAttribute("id", id);
+			return "delete-product-not-found"; // go to delete-product-not-found.jsp
+		}
+	}
+
+	// List all Product
+	@GetMapping("/list-products")
+	public String listProducts(Model model) {
+		
+		List<EProduct> productList = eProductRepositry.findAll();
+		model.addAttribute("productList", productList);
+		
+		return "list-of-products"; // go to list-of-products.jsp		
 	}
 
 }
