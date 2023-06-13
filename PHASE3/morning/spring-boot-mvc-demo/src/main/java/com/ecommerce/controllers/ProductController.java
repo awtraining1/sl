@@ -46,16 +46,22 @@ public class ProductController {
 		Optional<EProduct> productFromRepo = eProductRepo.findById(id);
 
 		if (productFromRepo.isPresent()) {
-			
+
 			EProduct product = productFromRepo.get();
 			model.addAttribute("product", product);
 			return "edit-product"; // go to edit-product.jsp
-			
+
 		} else {
-			// model.addAttribute("id", id);
+			model.addAttribute("id", id);
 			return "product-not-found"; // go to product-not-found.jsp
 		}
+	}
 
+	@PostMapping("/edit-product")
+	public String editProduct(@ModelAttribute("product") EProduct product) {
+		eProductRepo.save(product);
+
+		return "edit-product-success"; // go to edit-product-success.jsp
 	}
 
 }

@@ -8,17 +8,20 @@
 <title>User Registration Form</title>
 </head>
 <body>
-	<div align="center">		
+	<div align="center">
+			Edit Product 	${product.ID} <br>	<br>	
 		
 			<form:form action="edit-product" method="post"
 				modelAttribute="product">
-
+				<form:input path="ID" value="${product.ID}" type="hidden"/>
+				
 				<form:label path="name">Product name:</form:label>
 				<form:input path="name" value="${product.name}" />
 				<br />
 				<form:label path="price">Product Price:</form:label>
 				<form:input path="price" value="${product.price}" />
 				<br />
+				<form:input path="ID" value="${product.dateAdded}" type="hidden"/>
 
 				<form:button>Save Product</form:button>
 
