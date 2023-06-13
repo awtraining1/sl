@@ -1,5 +1,6 @@
 package com.ecommerce.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,5 +81,16 @@ public class ProductController {
 			return "product-not-found"; // go to product-not-found.jsp
 		}
 	}
+	
+	//List all products
+	@GetMapping("/list-products")
+	public String listProducts(Model model) {
+		List<EProduct> products = eProductRepo.findAll();
+		
+		model.addAttribute("productList", products);
+		
+		return "product-list"; // go to product-list.jsp
+	}
+	
 
 }
