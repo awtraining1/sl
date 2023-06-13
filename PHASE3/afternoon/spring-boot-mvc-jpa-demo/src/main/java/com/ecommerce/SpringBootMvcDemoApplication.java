@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan({"com.ecommerce.controllers", "com.ecommerce.entity"})
+@ComponentScan({"com.ecommerce.controllers", "com.ecommerce.entity","com.ecommerce.repositries" })
 @SpringBootApplication
 public class SpringBootMvcDemoApplication {
 
