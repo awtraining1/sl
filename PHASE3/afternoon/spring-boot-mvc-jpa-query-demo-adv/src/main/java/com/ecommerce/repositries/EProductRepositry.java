@@ -21,8 +21,13 @@ public interface EProductRepositry extends JpaRepository<EProduct, Integer> {
 	// JPQL queries
 	@Query("SELECT p FROM EProduct p WHERE p.name LIKE %:name%")
 	List<EProduct> findAllByHavingNameAnywhere(String name);
-
-	// JPQL queries
+	
 	@Query("SELECT p FROM EProduct p WHERE p.price > :minPrice and p.price < :maxPrice")
 	List<EProduct> findAllWherePriceIsInBetween(float minPrice,float maxPrice);
+	
+	// SQL queries
+	@Query(value="SELECT * FROM eproduct WHERE name LIKE %:name%", nativeQuery=true)
+	List<EProduct> findAllByHavingNameAnywhereUsingSQL(String name);
+	
+	
 }

@@ -109,12 +109,22 @@ public class EProductController {
 
 		return "list-of-products"; // go to list-of-products.jsp
 	}
-	
+
 	// List all Products by name like something
 	@GetMapping("/list-products-by-name-like")
 	public String listProductsByNameLike(@RequestParam String name, Model model) {
 
 		List<EProduct> productList = eProductRepositry.findAllByHavingNameAnywhere(name);
+		model.addAttribute("productList", productList);
+
+		return "list-of-products"; // go to list-of-products.jsp
+	}
+
+	// List all Products by name like something using SQL
+	@GetMapping("/list-products-by-name-like-using-sql")
+	public String listProductsByNameLikeSQL(@RequestParam String name, Model model) {
+
+		List<EProduct> productList = eProductRepositry.findAllByHavingNameAnywhereUsingSQL(name);
 		model.addAttribute("productList", productList);
 
 		return "list-of-products"; // go to list-of-products.jsp
