@@ -144,6 +144,14 @@ public class EProductController {
 		return "list-of-products"; // go to list-of-products.jsp
 	}
 	
-	
+	// List all Products  where price is exactly 1000
+	@GetMapping("/list-products-price-is-1000")
+	public String listProductsHavingPrice1000(Model model) {
+
+		List<EProduct> productList = eProductRepositry.findAllWherePriceIs1000();
+		model.addAttribute("productList", productList);
+
+		return "list-of-products"; // go to list-of-products.jsp
+	}
 
 }

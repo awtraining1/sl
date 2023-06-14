@@ -1,4 +1,5 @@
 <a href="list-products">List All Products</a>
+<a href="list-products-price-is-1000">List All Products with Price exactly 1000</a>
 
 <br><br>
 <h2>Search product by name keyword and min price and max price (implemented using Criteria/Specfication API)</h2>

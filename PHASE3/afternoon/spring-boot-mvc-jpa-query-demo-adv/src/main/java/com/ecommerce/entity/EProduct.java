@@ -8,8 +8,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
+@NamedQuery(name ="EProduct.findAllWherePriceIs1000", query="SELECT p from EProduct p where p.price=1000")
 @Entity
 @Table(name="eproduct")
 public class EProduct {
