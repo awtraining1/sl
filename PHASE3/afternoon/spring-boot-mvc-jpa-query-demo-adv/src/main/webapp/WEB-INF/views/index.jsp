@@ -1,6 +1,18 @@
 <a href="list-products">List All Products</a>
 
 <br><br>
+<h2>Search product by name keyword and min price and max price (implemented using Criteria/Specfication API)</h2>
+<form action="/list-products-by-name-like-and-price-between-min-max" method=GET>
+NAME like: <input name=name>
+<br>PRICE (greater than): <input name=minP> &nbsp;&nbsp;
+PRICE (less than): <input name=maxP>
+<br><br>
+<input type=submit value="SEARCH">
+</form>
+
+<br><br>
+
+<br><br>
 <h2>Search product by name keyword using SQL native query</h2>
 <form action="/list-products-by-name-like-using-sql" method=GET>
 NAME like: <input name=name>

@@ -13,12 +13,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.entity.EProduct;
 import com.ecommerce.repositries.EProductRepositry;
+import com.ecommerce.services.ProductService;
 
 @Controller
 public class EProductController {
 
 	@Autowired
 	EProductRepositry eProductRepositry;
+	
+	@Autowired
+	ProductService productService;
 
 	// Process the http GET request for showing "new product form"
 	@GetMapping("/add-product")
@@ -129,5 +133,17 @@ public class EProductController {
 
 		return "list-of-products"; // go to list-of-products.jsp
 	}
+	
+	// List all Products by name like, and price between minP and maxP
+	@GetMapping("/list-products-by-name-like-and-price-between-min-max")
+	public String listProductsByNameAndPriceMinMax(@RequestParam String name,@RequestParam float minP,@RequestParam float maxP, Model model) {
+
+		List<EProduct> productList = productService.findAllWherePriceIsInBetweenAndNameLike(name,minP,maxP);
+		model.addAttribute("productList", productList);
+
+		return "list-of-products"; // go to list-of-products.jsp
+	}
+	
+	
 
 }
