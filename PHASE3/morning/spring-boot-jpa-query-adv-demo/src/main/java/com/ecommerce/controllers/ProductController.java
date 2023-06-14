@@ -13,12 +13,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.entity.EProduct;
 import com.ecommerce.repositries.EProductRepo;
+import com.ecommerce.services.ProductService;
 
 @Controller
 public class ProductController {
 
 	@Autowired
 	EProductRepo eProductRepo;
+	
+	@Autowired
+	ProductService productService;
 
 	@GetMapping("/add-product")
 	public String showNewProductForm(Model model) {
@@ -127,6 +131,16 @@ public class ProductController {
 	public String listProductsByNameAnywhere(@RequestParam String name, @RequestParam float price, Model model) {
 
 		List<EProduct> products = eProductRepo.getAllProductsHavingNameAnywhereAndPriceGT(name, price);
+		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+	
+	// // Using JPA Criteria/ Specification API Example
+	@GetMapping("/list-products-by-name-like-and-price-lt")
+	public String listProductsByNameAnywhereAndPriceLessThan(@RequestParam String name, @RequestParam float price, Model model) {
+
+		List<EProduct> products = productService.getAllProductsHavingNameAnywhereAndPriceLT(name, price);
 		model.addAttribute("productList", products);
 
 		return "product-list"; // go to product-list.jsp

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@ComponentScan({"com.ecommerce.controllers","com.ecommerce.entity", "com.ecommerce.repositries" })
+@ComponentScan({"com.ecommerce.controllers","com.ecommerce.entity", "com.ecommerce.repositries", "com.ecommerce.services" })
 @EnableJpaRepositories
 @SpringBootApplication
 public class SpringBootMvcDemoApplication {

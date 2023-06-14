@@ -1,5 +1,12 @@
 <h3><b>JPA Query Demo (Advanced)</b></h3>
 
+<h2>List Products where Name Like and Price Less than (implemented in Service class using Criteria/Specification API) </h2>
+<form action="list-products-by-name-like-and-price-lt" method="GET">
+NAME: <input name="name" > &nbsp;&nbsp;&nbsp;&nbsp;
+PRICE(less than): <input name="price" >
+<input type=submit>
+</form>
+
 <h2>List Products where Name Like and Price Greater than </h2>
 <form action="list-products-by-name-like-and-price-gt" method="GET">
 NAME: <input name="name" > &nbsp;&nbsp;&nbsp;&nbsp;
