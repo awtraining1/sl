@@ -12,7 +12,7 @@
 			<td>${product.name}
 			<td>${product.price}
 			<td>${product.dateAdded}
-			<td><a href="edit-product?id=${product.ID}"> EDIT </a> &nbsp;
+			<td><a href="edit-product?id=${product.ID}"> ADD TO CART </a> &nbsp;
 			<a href="delete-product?id=${product.ID}"> DELETE </a>
 		<tr>
 	</c:forEach>

@@ -64,33 +64,52 @@ public class ProductController {
 
 		return "edit-product-success"; // go to edit-product-success.jsp
 	}
-	
+
 	// Delete functionality
 	@GetMapping("/delete-product")
 	public String deleteProduct(@RequestParam int id, Model model) {
 		Optional<EProduct> productFromRepo = eProductRepo.findById(id);
 
-		if (productFromRepo.isPresent()) {	
-			
+		if (productFromRepo.isPresent()) {
+
 			eProductRepo.deleteById(id);
 			model.addAttribute("id", id);
-			return "delete-product-success"; // go to delete-product-success.jsp			
+			return "delete-product-success"; // go to delete-product-success.jsp
 
 		} else {
 			model.addAttribute("id", id);
 			return "product-not-found"; // go to product-not-found.jsp
 		}
 	}
-	
-	//List all products
+
+	// List all products
 	@GetMapping("/list-products")
 	public String listProducts(Model model) {
 		List<EProduct> products = eProductRepo.findAll();
-		
+
 		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+
+	// List all products having particular name
+	@GetMapping("/list-products-by-name")
+	public String listProductsByName(@RequestParam String name, Model model) {
 		
+		List<EProduct> products = eProductRepo.findAllByName(name);
+		model.addAttribute("productList", products);
+
 		return "product-list"; // go to product-list.jsp
 	}
 	
+	// List all products having price greater than 
+		@GetMapping("/list-products-by-price-gt")
+		public String listProductsByName(@RequestParam float price, Model model) {
+			
+			List<EProduct> products = eProductRepo.findAllByPriceGreaterThan(price);
+			model.addAttribute("productList", products);
+
+			return "product-list"; // go to product-list.jsp
+		}
 
 }
