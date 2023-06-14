@@ -83,11 +83,31 @@ public class EProductController {
 	// List all Product
 	@GetMapping("/list-products")
 	public String listProducts(Model model) {
-		
+
 		List<EProduct> productList = eProductRepositry.findAll();
 		model.addAttribute("productList", productList);
-		
-		return "list-of-products"; // go to list-of-products.jsp		
+
+		return "list-of-products"; // go to list-of-products.jsp
+	}
+
+	// List all Product by name
+	@GetMapping("/list-products-by-name")
+	public String listProductsByName(@RequestParam String name, Model model) {
+
+		List<EProduct> productList = eProductRepositry.findAllByName(name);
+		model.addAttribute("productList", productList);
+
+		return "list-of-products"; // go to list-of-products.jsp
+	}
+
+	// List all Product by price greater than
+	@GetMapping("/list-products-by-price-gt")
+	public String listProductsByNameAndPrice(@RequestParam float price, Model model) {
+
+		List<EProduct> productList = eProductRepositry.findAllByPriceGreaterThan(price);
+		model.addAttribute("productList", productList);
+
+		return "list-of-products"; // go to list-of-products.jsp
 	}
 
 }
