@@ -1,11 +1,19 @@
 <h3><b>JPA Query Demo (Advanced)</b></h3>
-<h3>List Products where Name Like</h3>
+
+<h2>List Products where Name Like and Price Greater than </h2>
+<form action="list-products-by-name-like-and-price-gt" method="GET">
+NAME: <input name="name" > &nbsp;&nbsp;&nbsp;&nbsp;
+PRICE(greater than): <input name="price" >
+<input type=submit>
+</form>
+
+<h2>List Products where Name Like</h2>
 <form action="list-products-by-name-like" method="GET">
 NAME: <input name="name" >
 <input type=submit>
 </form>
 
-<h3>List Products</h3>
+<h2>List Products</h2>
 <a href="list-products">List Products</a>
 <hr>
 <h3>List Products By Name</h3>
@@ -38,4 +46,3 @@ Delete this Product<br>
 ID: <input name=id >
 <input type=submit>
 </form>
-

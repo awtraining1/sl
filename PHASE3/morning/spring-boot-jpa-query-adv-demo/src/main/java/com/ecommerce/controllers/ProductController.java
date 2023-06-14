@@ -122,4 +122,14 @@ public class ProductController {
 		return "product-list"; // go to product-list.jsp
 	}
 
+	// Using @Query SQL based
+	@GetMapping("/list-products-by-name-like-and-price-gt")
+	public String listProductsByNameAnywhere(@RequestParam String name, @RequestParam float price, Model model) {
+
+		List<EProduct> products = eProductRepo.getAllProductsHavingNameAnywhereAndPriceGT(name, price);
+		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+
 }
