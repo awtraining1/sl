@@ -22,6 +22,7 @@ public class EProduct {
 	private Date dateAdded;
 	
 	@OneToOne
+	//@JoinColumn(name = "manufacturer_id")
 	Manufacturer manufacturer;
 	
 	
