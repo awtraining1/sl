@@ -28,11 +28,11 @@ public class OneToManyController {
 	@GetMapping("/add-address")
 	@ResponseBody
 	public String index() {
-		OfficeAddress addr = new OfficeAddress(1, "MUM, India");
+		OfficeAddress addr = new OfficeAddress(2, "HYD, India");
 		addessRepo.save(addr);
 
-		Employee emp1 = new Employee(1, "Sundar", addr);
-		Employee emp2 = new Employee(2, "Sakeel", addr);
+		Employee emp1 = new Employee(3, "Rajan", addr);
+		Employee emp2 = new Employee(4, "Shashikala", addr);
 
 		empRepo.save(emp1);
 		empRepo.save(emp2);

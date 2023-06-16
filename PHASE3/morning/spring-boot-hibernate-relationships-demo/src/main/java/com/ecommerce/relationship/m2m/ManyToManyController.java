@@ -8,8 +8,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ch.qos.logback.core.model.Model;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,17 +31,29 @@ public class ManyToManyController {
 	@ResponseBody
 	public String addProject() {
 		Set<Project> projects = new HashSet<Project>();
-		projects.add(new Project("ECOM WEBSITE"));
-		projects.add(new Project("FIBRE CABLING"));
+		projects.add(new Project("ECOM WEBSITE 3"));
+		projects.add(new Project("FIBRE CABLING 3"));
 
 		Staff staff1 = new Staff();
-		staff1.setFirstName("Shaji");
-		staff1.setLastName("Kumar");
+		staff1.setFirstName("Shaji 3");
+		staff1.setLastName("Kumar 3");
 		staff1.setProjects(projects);
 
 		staffRepo.save(staff1);
 
 		return "Saved a staff with two projects. Verify in the database";
+	}
+	
+	@GetMapping("/add-project-to-staff")
+	@ResponseBody
+	public String addProjectToStaff(@RequestParam int staffId,@RequestParam int projectId, Model model) {
+		// From the staff repo get the Staff obj whose id is  staffId.
+		// we will get the Staff obj staff1
+		// Also get the Project obj from projectRepo. We will get proj1
+		
+		// On the staff1, do staff1.getProjects().add(proj1);
+		
+		return "successfully added project with id to the staff id=";
 	}
 
 }
@@ -109,7 +123,7 @@ class Project {
 	String title;
 
 	@ManyToMany(mappedBy = "projects")
-	private Set<Staff> employees = new HashSet<>();
+	private Set<Staff> staffs = new HashSet<>();
 
 	public Project(String proj) {
 		this.title = proj;
@@ -131,12 +145,12 @@ class Project {
 		this.title = title;
 	}
 
-	public Set<Staff> getStaff() {
-		return employees;
+	public Set<Staff> getStaffS() {
+		return staffs;
 	}
 
-	public void setStaff(Set<Staff> employees) {
-		this.employees = employees;
+	public void setStaffS(Set<Staff> staffs) {
+		this.staffs = staffs;
 	}
 
 }
