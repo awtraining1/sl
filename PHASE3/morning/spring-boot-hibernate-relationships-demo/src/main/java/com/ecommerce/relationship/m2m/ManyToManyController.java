@@ -30,6 +30,10 @@ public class ManyToManyController {
 	@GetMapping("/add-project")
 	@ResponseBody
 	public String addProject() {
+		// Let's create some projects with hardcoded names
+		// and a staff wirth hardcoded name.
+		// In real projects, you get these from the user 
+		// by showing a html form and collecting the requestparam data here.
 		Set<Project> projects = new HashSet<Project>();
 		projects.add(new Project("ECOM WEBSITE 3"));
 		projects.add(new Project("FIBRE CABLING 3"));
