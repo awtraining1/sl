@@ -1,4 +1,4 @@
-package com.ecommerce.controllers;
+package com.ecommerce;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
