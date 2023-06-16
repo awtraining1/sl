@@ -1,11 +1,13 @@
 package com.ecommerce.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +41,30 @@ public class ProductRestController {
 	
 	
 	// Show details of one product
+	@GetMapping(path="/details/{id}", produces = "application/json")
+	public ResponseEntity<Object> showProduct(@PathVariable("id") int id){
+		Optional<EProduct> productFromRepo = eProductRepo.findById(id);
+
+		if (productFromRepo.isPresent()) {
+			EProduct product = productFromRepo.get();
+			return new ResponseEntity<>(product, HttpStatusCode.valueOf(200));	
+		}else {
+			return new ResponseEntity<>("Product Not Found", HttpStatusCode.valueOf(404));	
+		}		
+	}
+	
+	// Delete a product
+	@GetMapping(path="/delete/{id}", produces = "application/json")
+	public ResponseEntity<Object> deleteProduct(@PathVariable("id") int id){
+		Optional<EProduct> productFromRepo = eProductRepo.findById(id);
+
+		if (productFromRepo.isPresent()) {
+			eProductRepo.deleteById(id);
+			return new ResponseEntity<>("Product "+ id + " Deleted", HttpStatusCode.valueOf(200));	
+		}else {
+			return new ResponseEntity<>("Product "+ id + " Not Found", HttpStatusCode.valueOf(404));	
+		}		
+	}
 
 }
 
