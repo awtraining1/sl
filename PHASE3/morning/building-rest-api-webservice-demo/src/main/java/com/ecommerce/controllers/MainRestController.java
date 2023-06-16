@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.ecommerce.controllers;
 
 import java.math.BigDecimal;
 
@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.entity.EProduct;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/main")
 public class MainRestController {
 	
+	
+	// Starter Helloworld Example
 	@GetMapping(path="/data", produces = "application/json")
 	public ResponseEntity<EProduct> displayData()
 	{
@@ -23,6 +25,9 @@ public class MainRestController {
 		
 		return new ResponseEntity<EProduct>(e1, HttpStatusCode.valueOf(200));		
 	}
+	
+	
+	
 
 }
 
