@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@ComponentScan({"com.ecommerce.entity","com.ecommerce","com.ecommerce.repos"})
+@ComponentScan({"com.ecommerce.entity","com.ecommerce","com.ecommerce.repos", "com.ecommerce.relationship.o2m"})
 @EnableJpaRepositories
 @SpringBootApplication
 public class SpringBootHibernateEntityRelationshipsDemoApplication {
