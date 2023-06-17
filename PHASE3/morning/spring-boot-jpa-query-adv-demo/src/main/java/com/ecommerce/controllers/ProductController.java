@@ -1,0 +1,149 @@
+package com.ecommerce.controllers;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ecommerce.entity.EProduct;
+import com.ecommerce.repositries.EProductRepo;
+import com.ecommerce.services.ProductService;
+
+@Controller
+public class ProductController {
+
+	@Autowired
+	EProductRepo eProductRepo;
+	
+	@Autowired
+	ProductService productService;
+
+	@GetMapping("/add-product")
+	public String showNewProductForm(Model model) {
+
+		EProduct product = new EProduct();
+		model.addAttribute("product", product);
+
+		return "new-product"; // go to new-product.jsp
+	}
+
+	@PostMapping("/add-product")
+	public String addNewProduct(@ModelAttribute("product") EProduct product) {
+		// Business logic
+		// For example : check the name or age
+		// Also we can Save to Database
+
+		// Save to Database
+		eProductRepo.save(product);
+
+		return "new-product-added-success"; // go to new-product-added-success.jsp
+	}
+
+	// Edit use case
+	@GetMapping("/edit-product")
+	public String showEditProductForm(@RequestParam int id, Model model) {
+		Optional<EProduct> productFromRepo = eProductRepo.findById(id);
+
+		if (productFromRepo.isPresent()) {
+
+			EProduct product = productFromRepo.get();
+			model.addAttribute("product", product);
+			return "edit-product"; // go to edit-product.jsp
+
+		} else {
+			model.addAttribute("id", id);
+			return "product-not-found"; // go to product-not-found.jsp
+		}
+	}
+
+	@PostMapping("/edit-product")
+	public String editProduct(@ModelAttribute("product") EProduct product) {
+		eProductRepo.save(product);
+
+		return "edit-product-success"; // go to edit-product-success.jsp
+	}
+
+	// Delete functionality
+	@GetMapping("/delete-product")
+	public String deleteProduct(@RequestParam int id, Model model) {
+		Optional<EProduct> productFromRepo = eProductRepo.findById(id);
+
+		if (productFromRepo.isPresent()) {
+
+			eProductRepo.deleteById(id);
+			model.addAttribute("id", id);
+			return "delete-product-success"; // go to delete-product-success.jsp
+
+		} else {
+			model.addAttribute("id", id);
+			return "product-not-found"; // go to product-not-found.jsp
+		}
+	}
+
+	// List all products
+	@GetMapping("/list-products")
+	public String listProducts(Model model) {
+		List<EProduct> products = eProductRepo.findAll();
+
+		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+
+	// List all products having particular name
+	@GetMapping("/list-products-by-name")
+	public String listProductsByName(@RequestParam String name, Model model) {
+
+		List<EProduct> products = eProductRepo.findAllByName(name);
+		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+
+	// List all products having price greater than
+	@GetMapping("/list-products-by-price-gt")
+	public String listProductsByName(@RequestParam float price, Model model) {
+
+		List<EProduct> products = eProductRepo.findAllByPriceGreaterThan(price);
+		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+
+	// Our own Query based search
+	@GetMapping("/list-products-by-name-like")
+	public String listProductsByNameAnywhere(@RequestParam String name, Model model) {
+
+		List<EProduct> products = eProductRepo.getAllProductHavingNameAnywhere(name);
+		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+
+	// Using @Query SQL based
+	@GetMapping("/list-products-by-name-like-and-price-gt")
+	public String listProductsByNameAnywhere(@RequestParam String name, @RequestParam float price, Model model) {
+
+		List<EProduct> products = eProductRepo.getAllProductsHavingNameAnywhereAndPriceGT(name, price);
+		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+	
+	// // Using JPA Criteria/ Specification API Example
+	@GetMapping("/list-products-by-name-like-and-price-lt")
+	public String listProductsByNameAnywhereAndPriceLessThan(@RequestParam String name, @RequestParam float price, Model model) {
+
+		List<EProduct> products = productService.getAllProductsHavingNameAnywhereAndPriceLT(name, price);
+		model.addAttribute("productList", products);
+
+		return "product-list"; // go to product-list.jsp
+	}
+
+}
