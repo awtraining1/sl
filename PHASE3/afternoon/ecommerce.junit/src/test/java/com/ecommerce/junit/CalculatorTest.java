@@ -1,12 +1,14 @@
 package com.ecommerce.junit;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class CalculatorTest {
 
 	@Test
+	@DisplayName("Testin Cal for positive values")
 	void testAddPositiveValues() {
 		
 		Calculator cal = new Calculator();
