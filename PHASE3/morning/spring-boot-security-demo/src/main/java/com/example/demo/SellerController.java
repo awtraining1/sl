@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SellerController {
 	
-	@GetMapping("/seller_home")
+	@GetMapping("/seller/home")
 	public String seller() {
 		return "seller/seller";
 	}
 	
-	@GetMapping("/home1")
+	@GetMapping("/home1/home")
 	public String home1() {
 		return "home1";
 	}
