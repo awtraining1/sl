@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ch.qos.logback.core.model.Model;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,9 +30,9 @@ public class ManyToManyController {
 	@ResponseBody
 	public String addProject() {
 		// Let's create some projects with hardcoded names
-		// and a staff wirth hardcoded name.
+		// and a staff with hardcoded names.
 		// In real projects, you get these from the user 
-		// by showing a html form and collecting the requestparam data here.
+		// by showing a html form and collecting the @requestparam data here.
 		Set<Project> projects = new HashSet<Project>();
 		projects.add(new Project("ECOM WEBSITE 3"));
 		projects.add(new Project("FIBRE CABLING 3"));
