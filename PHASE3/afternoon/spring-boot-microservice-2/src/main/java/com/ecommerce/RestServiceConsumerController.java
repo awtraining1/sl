@@ -11,8 +11,8 @@ import com.ecommerce.entity.EProduct;
 @Controller
 public class RestServiceConsumerController {		
 
-	@GetMapping("/todo/{id}")
-	public String todo(@PathVariable("id") int id, Model model) {
+	@GetMapping("/abc/{id}")
+	public String productDetails(@PathVariable("id") int id, Model model) {
 
 		RestTemplate restTemplate = new RestTemplate();
 		// Get a product from the first micro service.
