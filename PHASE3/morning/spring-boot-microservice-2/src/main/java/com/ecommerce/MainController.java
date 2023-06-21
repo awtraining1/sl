@@ -2,32 +2,24 @@ package com.ecommerce;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
-import com.ecommerce.entity.Todo;
+import com.ecommerce.entity.EProduct;
 
 @Controller
 public class MainController {
 
-	@GetMapping("/todo/{id}")
+	@GetMapping("/product2/{id}")
 	public String todo(@PathVariable("id") int id, Model model) {
 
-		// Web service we are are consuming is at: https://jsonplaceholder.typicode.com/
-		// It provides todo data in the form:
-//		{
-//			  "userId": 1,
-//			  "id": 3,
-//			  "title": "fugiat veniam minus",
-//			  "completed": false
-//			}
-//		 when we hit https://jsonplaceholder.typicode.com/todos/3
 
 		RestTemplate restTemplate = new RestTemplate();
-		Todo todo = restTemplate.getForObject("https://jsonplaceholder.typicode.com/todos/" + id, Todo.class);
-		model.addAttribute("todo", todo);
+		EProduct product = restTemplate.getForObject("http://localhost:8080/products/details/" + id, EProduct.class);
+		model.addAttribute("product", product);
 
-		return "todo-details"; // go to "todo-details.jsp"
+		return "product-details"; // go to "product-details.jsp"
 	}
 
 }
