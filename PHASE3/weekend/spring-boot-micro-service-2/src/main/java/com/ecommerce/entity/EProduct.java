@@ -25,4 +25,8 @@ public class EProduct {
         public void setPrice(BigDecimal price) { this.price = price;}
         public void setDateAdded(Date date) { this.dateAdded = date;}
         
+        public String toString() {
+        	return "EProduct [ID=" + ID + ", name=" + name + ", price=" + price + ", dateAdded=" + dateAdded + "]";
+        }
+        
 }

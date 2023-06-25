@@ -2,7 +2,7 @@ package com.ecommerce.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,9 +11,9 @@ import com.ecommerce.entity.EProduct;
 @Controller
 public class ProductController {
 
-	@GetMapping("/todo")
+	@GetMapping("/ms2-product/details/{id}")
 	@ResponseBody
-	public String index(@RequestParam String id) {
+	public String index(@PathVariable String id) {
 
 		RestTemplate restTemplate = new RestTemplate();		
 
