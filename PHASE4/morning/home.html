@@ -10,7 +10,15 @@
 
 <body>
     <div class="container p-100">
-
+        <br><br><br><br>
+        <!--Bread crumps-->
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Page1</a></li>
+            <li class="breadcrumb-item"><a href="#">Page2</a></li>
+            <li class="breadcrumb-item"><a href="#">Page3</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Current Page</li>
+           </ul>
         <div class="mt-4 p-5 bg-primary text-white rounded">
             <h1 class="text-center">Welcome to ECommerce</h1>
             <p>Great products are great prices.</p>
@@ -35,12 +43,75 @@
                     role="tab" aria- controls="contact" aria-selected="false">Contact</button>
             </li>
         </ul>
-        
+
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">TAB CONTENT A</div>
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">TAB CONTENT A
+            </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">TAB CONTENT B</div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">TAB CONTENT C</div>
         </div>
+
+        <br><br>
+        <!--Nav-->
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Reports</a>
+            </li>
+        </ul>
+
+        <!--Nav with Pills-->
+        <ul class="nav nav-pills border-top border-bottom">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-sm bg-dark text-white navbar-dark fixed-top">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section1">Section 1</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                My Account
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Subscribe</a></li>
+                                <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                                <li><a class="dropdown-item" href="#">Offers</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section2">Section 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        
 
         <span class="glyphicon glyphicon-home"></span>
         <br>
