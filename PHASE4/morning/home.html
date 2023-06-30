@@ -8,8 +8,8 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="container p-100">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+    <div class="container p-100" >
         <br><br><br><br>
         <!--Bread crumps-->
         <ul class="breadcrumb">
@@ -18,15 +18,57 @@
             <li class="breadcrumb-item"><a href="#">Page2</a></li>
             <li class="breadcrumb-item"><a href="#">Page3</a></li>
             <li class="breadcrumb-item active" aria-current="page">Current Page</li>
-           </ul>
+        </ul>
         <div class="mt-4 p-5 bg-primary text-white rounded">
             <h1 class="text-center">Welcome to ECommerce</h1>
             <p>Great products are great prices.</p>
         </div>
 
+
         <br>
         <!--Badge-->
         <h2 class="text-center">Next <span class="badge bg-warning">Summer Sale </span> on 1st Aug</h2>
+
+        <!--Scroll spy links-->        
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#section1">Section 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#section2">Section 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#section3">Section 3</a>
+            </li>
+        </ul>
+        </div>
+        </nav>
+
+        <!--Scroll spy content-->
+        <div id="section1" class="container-fluid bg-success text-white" style="padding:100px 20px;">
+            <h1>Section 1</h1>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation
+            bar while scrolling!</p>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation
+            bar while scrolling!</p>
+            </div>
+            <div id="section2" class="container-fluid bg-warning" style="padding:100px 20px;">
+            <h1>Section 2</h1>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation
+            bar while scrolling!</p>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation
+            bar while scrolling!</p>
+            </div>
+            <div id="section3" class="container-fluid bg-secondary text-white" style="padding:100px 20px;">
+            <h1>Section 3</h1>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation
+            bar while scrolling!</p>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation
+            bar while scrolling!</p>
+            </div>
+
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -81,7 +123,7 @@
             </li>
         </ul>
 
-        <!--Navigation Bar-->
+        <!--Navigation Bar
         <nav class="navbar navbar-expand-sm bg-dark text-white navbar-dark fixed-top">
             <div class="container-fluid">
                 <ul class="navbar-nav">
@@ -110,8 +152,8 @@
                 </ul>
             </div>
         </nav>
+-->
 
-        
 
         <span class="glyphicon glyphicon-home"></span>
         <br>
