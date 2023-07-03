@@ -1,0 +1,82 @@
+<html>
+
+
+<script>
+
+    // Here is how we define a function.
+    // use the keyword function to define a function
+    function add1ssds() {
+        ///
+        //alert("Hello");
+
+        console.log("Hello");
+
+    };
+
+    add1ssds();
+    add1ssds();
+    add1ssds();
+
+    // Functions can be used to create objects
+
+    x = new add1ssds();
+
+    function Car(name, color) {
+        this.name = name;
+        this.color = color;
+
+        this.display = function () {
+            console.log("I am a Car. My name is " + this.name + " and color is " + this.color);
+        }
+
+    }
+
+    car1 = new Car("Maruti", "red");
+    car1.display();
+
+    car2 = new Car("Ford", "blue");
+    car2.display();
+
+    // ES6 way of doing things
+    class Bus {
+
+        constructor(name, color) {
+            this.name = name;
+            this.color = color;
+        }
+
+        display() {
+            return "I am a Bus. My name is " + this.name + " and color is " + this.color;
+        }
+
+        
+    }
+
+    bus1 = new Bus("Tata", "red");
+    bus1.display();
+
+    // Inheritance demo
+
+    class LuxuryBus extends Bus{
+
+        constructor(name, color, airconditioner, videoPlayer) {
+            super(name, color);
+            this.airconditioner = airconditioner;
+            this.videoPlayer = videoPlayer;
+        }
+
+        // Overriding the super class method 
+        display() {
+            console.log( super.display() + ". I am airconditioned : " +this.airconditioner);
+            //console.log("I am a Luxury Bus. My name is " + this.name + " and color is " + this.color +  ". I am airconditioned : " +this.airconditioner);
+        }
+
+    }
+
+    luxbus1 = new LuxuryBus("Toyota", "purple", true, false);
+    luxbus1.display();
+    
+
+</script>
+
+</html>

@@ -1,0 +1,509 @@
+<html>
+
+<head>
+
+    <script>
+        //JS Object based Langauage (Object Oriented Language)
+        x= 100;
+
+        n = new Number(100);
+       
+
+        y=false;
+
+        y = new Boolean(false);
+
+        // Built-in objects
+        // window - b-i-o
+
+        //alert(window.innerHeight);
+
+ function getBrowserName(userAgent) {
+  // The order matters here, and this may report false positives for unlisted browsers.
+
+  if (userAgent.includes("Firefox")) {
+    // "Mozilla/5.0 (X11; Linux i686; rv:104.0) Gecko/20100101 Firefox/104.0"
+    return "Mozilla Firefox";
+  } else if (userAgent.includes("SamsungBrowser")) {
+    // "Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-G955F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.4 Chrome/67.0.3396.87 Mobile Safari/537.36"
+    return "Samsung Internet";
+  } else if (userAgent.includes("Opera") || userAgent.includes("OPR")) {
+    // "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_5_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36 OPR/90.0.4480.54"
+    return "Opera";
+  } else if (userAgent.includes("Edge")) {
+    // "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299"
+    return "Microsoft Edge (Legacy)";
+  } else if (userAgent.includes("Edg")) {
+    // "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36 Edg/104.0.1293.70"
+    return "Microsoft Edge (Chromium)";
+  } else if (userAgent.includes("Chrome")) {
+    // "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+    return "Google Chrome or Chromium";
+  } else if (userAgent.includes("Safari")) {
+    // "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1"
+    return "Apple Safari";
+  } else {
+    return "unknown";
+  }
+};
+
+        browserName = getBrowserName(navigator.userAgent);
+        alert(browserName);
+
+
+     ;
+
+    </script>
+
+
+</head>
+
+
+<body>
+
+    <p id="p100">Hello World</p>
+
+
+    Skip to main content
+Skip to search
+Skip to select language
+Get real-time assistance with your coding queries. Try AI Help now!
+
+References
+Guides
+Plus
+Blog
+Play
+NEW
+AI Help
+BETA
+Search MDN
+   
+
+SEARCH
+
+Theme
+Log in
+Get MDN Plus
+References
+Web APIs
+Window
+scrollTo()
+
+English (US)
+Filter sidebar
+Filter
+Window
+Instance properties
+applicationCache
+Non-standardDeprecated
+closed
+console
+credentialless
+ExperimentalNon-standard
+customElements
+defaultStatus
+Deprecated
+devicePixelRatio
+document
+event
+Deprecated
+external
+Deprecated
+frameElement
+frames
+fullScreen
+Non-standard
+history
+innerHeight
+innerWidth
+launchQueue
+Experimental
+length
+localStorage
+location
+locationbar
+menubar
+mozInnerScreenX
+Non-standard
+mozInnerScreenY
+Non-standard
+name
+navigation
+Experimental
+navigator
+ondragdrop
+Deprecated
+opener
+orientation
+Deprecated
+outerHeight
+outerWidth
+pageXOffset
+pageYOffset
+parent
+personalbar
+scheduler
+screen
+screenLeft
+screenTop
+screenX
+screenY
+scrollbars
+scrollMaxX
+Non-standard
+scrollMaxY
+Non-standard
+scrollX
+scrollY
+self
+sessionStorage
+sidebar
+Non-standardDeprecated
+speechSynthesis
+status
+Deprecated
+statusbar
+toolbar
+top
+visualViewport
+window
+Instance methods
+alert()
+back()
+Non-standardDeprecated
+blur()
+cancelAnimationFrame()
+cancelIdleCallback()
+captureEvents()
+Deprecated
+clearImmediate()
+close()
+confirm()
+convertPointFromNodeToPage()
+Non-standard
+dump()
+Non-standard
+find()
+Non-standard
+focus()
+forward()
+Non-standardDeprecated
+getComputedStyle()
+getDefaultComputedStyle()
+Non-standard
+getSelection()
+matchMedia()
+moveBy()
+moveTo()
+open()
+postMessage()
+print()
+prompt()
+queryLocalFonts()
+Experimental
+releaseEvents()
+Deprecated
+requestAnimationFrame()
+requestFileSystem()
+Non-standardDeprecated
+requestIdleCallback()
+resizeBy()
+resizeTo()
+scroll()
+scrollBy()
+scrollByLines()
+Non-standard
+scrollByPages()
+Non-standard
+scrollTo()
+setImmediate()
+showDirectoryPicker()
+Experimental
+showModalDialog()
+Non-standardDeprecated
+showOpenFilePicker()
+Experimental
+showSaveFilePicker()
+Experimental
+sizeToContent()
+Non-standard
+stop()
+updateCommands()
+Non-standard
+webkitConvertPointFromPageToNode()
+Non-standardDeprecated
+Events
+afterprint
+appinstalled
+beforeinstallprompt
+beforeprint
+beforeunload
+blur
+copy
+cut
+devicemotion
+deviceorientation
+deviceorientationabsolute
+DOMContentLoaded
+error
+focus
+gamepadconnected
+gamepaddisconnected
+hashchange
+languagechange
+load
+message
+messageerror
+offline
+online
+orientationchange
+Deprecated
+pagehide
+pageshow
+paste
+popstate
+rejectionhandled
+resize
+storage
+unhandledrejection
+unload
+vrdisplayactivate
+Non-standardDeprecated
+vrdisplayconnect
+Non-standardDeprecated
+vrdisplaydeactivate
+Non-standardDeprecated
+vrdisplaydisconnect
+Non-standardDeprecated
+vrdisplaypresentchange
+Non-standardDeprecated
+Inheritance:
+EventTarget
+In this article
+Syntax
+Examples
+Notes
+Specifications
+Browser compatibility
+Window: scrollTo() method
+Window.scrollTo() scrolls to a particular set of coordinates in the document.
+
+Syntax
+JS
+Copy to Clipboard
+
+scrollTo(x-coord, y-coord)
+scrollTo(options)
+Parameters
+x-coord is the pixel along the horizontal axis of the document that you want displayed in the upper left.
+y-coord is the pixel along the vertical axis of the document that you want displayed in the upper left.
+- or -
+
+options
+A dictionary containing the following parameters:
+
+top
+Specifies the number of pixels along the Y axis to scroll the window or element.
+
+left
+Specifies the number of pixels along the X axis to scroll the window or element.
+
+behavior
+Determines whether scrolling is instant or animates smoothly. This option is a string which must take one of the following values:
+
+smooth: scrolling should animate smoothly
+instant: scrolling should happen instantly in a single jump
+auto: scroll behavior is determined by the computed value of scroll-behavior
+Return value
+None (undefined).
+
+Examples
+JS
+Copy to Clipboard
+
+window.scrollTo(0, 1000);
+Using options:
+
+JS
+Copy to Clipboard
+
+window.scrollTo({
+  top: 100,
+  left: 100,
+  behavior: "smooth",
+});
+Notes
+Window.scroll() is effectively the same as this method. For relative scrolling, see Window.scrollBy(), Window.scrollByLines(), and Window.scrollByPages().
+
+For scrolling elements, see Element.scrollTop and Element.scrollLeft.
+
+Specifications
+Specification
+CSSOM View Module
+# dom-window-scrollto
+Browser compatibility
+Report problems with this compatibility data on GitHub
+desktop	mobile
+Chrome
+Edge
+Firefox
+Opera
+Safari
+Chrome Android
+Firefox for Android
+Opera Android
+Safari on iOS
+Samsung Internet
+WebView Android
+scrollTo
+
+1
+Toggle history	
+12
+Toggle history	
+1
+Toggle history	
+4
+Toggle history	
+1
+Toggle history	
+18
+Toggle history	
+4
+Toggle history	
+10.1
+Toggle history	
+1
+Toggle history	
+1.0
+Toggle history	
+4.4
+Toggle history
+options.behavior parameter
+
+61
+Toggle history	
+79
+Toggle history	
+36
+Toggle history	
+48
+Toggle history	
+14
+footnote
+Toggle history	
+61
+Toggle history	
+36
+Toggle history	
+45
+Toggle history	
+14
+footnote
+Toggle history	
+8.0
+Toggle history	
+61
+Toggle history
+options.left parameter
+
+41
+Toggle history	
+79
+Toggle history	
+36
+Toggle history	
+28
+Toggle history	
+10.1
+Toggle history	
+41
+Toggle history	
+36
+Toggle history	
+28
+Toggle history	
+10.3
+Toggle history	
+4.0
+Toggle history	
+41
+Toggle history
+options.top parameter
+
+41
+Toggle history	
+79
+Toggle history	
+36
+Toggle history	
+28
+Toggle history	
+10.1
+Toggle history	
+41
+Toggle history	
+36
+Toggle history	
+28
+Toggle history	
+10.3
+Toggle history	
+4.0
+Toggle history	
+41
+Toggle history
+Legend
+Tip: you can click/tap on a cell for more information.
+
+Full support
+Full support
+See implementation notes.
+Found a content problem with this page?
+Edit the page on GitHub.
+Report the content issue.
+View the source on GitHub.
+Want to get more involved? Learn how to contribute.
+This page was last modified on Apr 8, 2023 by MDN contributors.
+
+Your blueprint for a better internet.
+
+MDN on Twitter
+MDN on GitHub
+MDN Blog RSS Feed
+MDN
+About
+Blog
+Careers
+Advertise with us
+Support
+Product help
+Report an issue
+Our communities
+MDN Community
+MDN Forum
+MDN Chat
+Developers
+Web Technologies
+Learn Web Development
+MDN Plus
+Hacks Blog
+Website Privacy Notice
+Cookies
+Legal
+Community Participation Guidelines
+Visit Mozilla Corporation’s not-for-profit parent, the Mozilla Foundation.
+Portions of this content are ©1998–2023 by individual mozilla.org contributors. Content available under a Creative Commons license.
+
+
+<script>
+
+window.scrollTo(500,100);
+</script>
+   
+</body>
+
+
+
+</html>
