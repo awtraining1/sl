@@ -1,5 +1,5 @@
 <script>
-
+// Before ES6
 
 function add(x,y){
 return x+y;
@@ -23,5 +23,26 @@ car1 = new Car("Maruti", "red");
 console.log(car1.name);
 
 console.log( car1.display() );
+</script>
+
+<script>
+// After ES6
+console.log( "\n\n***** After ES6 ********" );
+
+// 1 New way of decl functions (Arrow functions)
+// function add(x,y){
+// return x+y;
+// };
+
+add_new = (x,y) =>{
+    // do something in 2 or more lines
+    return x+y;
+};
+
+add_new1 = (x,y) =>  x+y;
+
+console.log(add_new(40,50));
+console.log(add_new1(400,500));
+
 
 </script>
