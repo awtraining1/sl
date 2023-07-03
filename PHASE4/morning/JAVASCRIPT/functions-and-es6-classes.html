@@ -17,6 +17,12 @@
     add1ssds();
     add1ssds();
 
+    function f12(name){
+        
+    };
+
+    f12();
+
     // Functions can be used to create objects
 
     x = new add1ssds();
@@ -68,7 +74,6 @@
         // Overriding the super class method 
         display() {
             console.log( super.display() + ". I am airconditioned : " +this.airconditioner);
-            //console.log("I am a Luxury Bus. My name is " + this.name + " and color is " + this.color +  ". I am airconditioned : " +this.airconditioner);
         }
 
     }
@@ -76,6 +81,26 @@
     luxbus1 = new LuxuryBus("Toyota", "purple", true, false);
     luxbus1.display();
     
+
+</script>
+
+<script>
+// Prototypes demo
+
+car3 = new Car("Celerio", "white");
+
+Car.prototype.noOfSeats = 4;
+
+console.log("Car 3 " + car3.noOfSeats);
+
+car4 = new Car("Swift", "white");
+car4.noOfSeats =6;
+console.log("Car 4 numbof seats: " + car4.noOfSeats);
+
+Car.prototype.display2 = function () { return "Hi Hi";}
+
+console.log(car4.display2());
+
 
 </script>
 

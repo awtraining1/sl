@@ -1,0 +1,60 @@
+<script>
+    // Local and Global Scope demo
+
+    var x1=100; // global scope
+    console.log("1 " + x1);
+    //console.log("1 " + x2);
+    
+    function f1(){
+        var x2=100; // local scope
+        console.log("1x2 " + x2);
+    
+        console.log("2 " + x1);
+
+        // 
+        x3=500;
+    }
+    
+    //console.log("1x2 " + x2); ERROR, because local vars don't exist outside function call
+    f1();
+    /////
+    console.log("3 " + x1);
+    // console.log("3x2 " + x2); ERROR, because local vars
+
+    console.log("3x3 " + x3); // works!! variables decl without var keyword are always global
+
+    </script>
+
+<script>
+    //  Block scope demo
+    console.log("***Block scope demo **** ");
+
+    ////// G
+    let x11=  900;
+
+
+    function f2(){
+
+    /////// L
+    let x12=  900;
+       let i = 8; 
+
+        {
+           let x13=  900; // BLOCK SCOPE
+           console.log("x13 " + x13);
+           var x14 = 1000; // LOCAL 
+        }
+
+       // console.log("x13 " + x13); //ERROR B scope variables don't exist outside block
+       
+       for(let i=0; i<4;i++){
+        console.log("i="+i);
+       }
+       /////20 00 lin
+
+       console.log("outside i="+i); // prints i decl at line 40
+    }
+
+    f2();
+
+</script>

@@ -1,0 +1,79 @@
+<script>
+
+    function f0(x) {
+
+        console.log("x in f0 = " + x);
+    }
+
+    function f1(x) {
+
+        console.log("x in f1 = " + x);
+    }
+
+    function f2(y, g) {
+        console.log("y in f2 = " + y);
+
+        g(y);
+    }
+
+    f2(5, f1);
+
+    f2(6, f0);
+
+</script>
+
+<script>
+
+    function eng(x) {
+        console.log("Hello " + x);
+    }
+
+    function french(x) {
+        console.log("Bonjour " + x);
+    }
+
+    function f12(name, g) {        
+        g(name);
+    }
+
+    //if ( user is France)
+    f12("Bala", french);
+    //else
+    f12("Bala", eng);
+
+</script>
+
+<script>
+
+    function eng1(x) {
+        console.log("Hello " + x);
+    }
+
+    function french1(x) {
+        console.log("Bonjour " + x);
+    }
+
+    function f112(name, g, h) { 
+        //if ( user is France)       
+        g(name);
+        //else
+        h(name)
+    }
+
+    
+    f12("Bala", french1, eng1);
+   
+
+</script>
+
+<script>
+function f123(){
+
+return function xyz(){ return 5;}
+
+}
+
+let pqr = f123();
+console.log("pqr="+ pqr());
+
+</script>
