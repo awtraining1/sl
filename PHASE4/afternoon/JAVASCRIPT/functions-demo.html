@@ -1,48 +1,101 @@
 <script>
-// Before ES6
+    // Before ES6
 
-function add(x,y){
-return x+y;
-};
+    function add(x, y) {
+        return x + y;
+    };
 
-let result = add(4,5); // 9
-console.log(result);
+    let result = add(4, 5); // 9
+    console.log(result);
 
-// In JS we can use functions to create objects
-function Car(name,color){
-    this.name =  name;
-    this.color =  color;
+    // In JS we can use functions to create objects
+    function Car(name, color) {
+        this.name = name;
+        this.color = color;
 
-    this.display = function (){
-        return "["+ this.name + ", " + this.color +"]"
-    }
-    
-};
+        this.display = function () {
+            return "[" + this.name + ", " + this.color + "]"
+        }
+    };
 
-car1 = new Car("Maruti", "red");
-console.log(car1.name);
+    car1 = new Car("Maruti", "red");
+    console.log(car1.name);
 
-console.log( car1.display() );
+    console.log(car1.display());
 </script>
 
 <script>
-// After ES6
-console.log( "\n\n***** After ES6 ********" );
+    // Writing Functions After ES6
+    console.log("\n\n***** After ES6 ********");
 
-// 1 New way of decl functions (Arrow functions)
-// function add(x,y){
-// return x+y;
-// };
+    // 1 New way of decl functions (Arrow functions)
+    // Let's rewrite the below function as arrow function
+    // function add(x,y){
+    // return x+y;
+    // };
 
-add_new = (x,y) =>{
-    // do something in 2 or more lines
-    return x+y;
-};
+    // Arrow function for the above add function
+    add_new = (x, y) => {
+        // do something in 2 or more lines
+        return x + y;
+    };
 
-add_new1 = (x,y) =>  x+y;
+    // another approach
+    add_new1 = (x, y) => x + y;
 
-console.log(add_new(40,50));
-console.log(add_new1(400,500));
+    console.log(add_new(40, 50));
+    console.log(add_new1(400, 500));
 
+</script>
+
+<script>
+    // Creating Objects using ES6 features
+    console.log("\n\n***** Creating Objects using ES6 features ********");
+
+    class Bus {
+
+        constructor(name, color) {
+            this.name = name;
+            this.color = color;
+        }
+
+        display() {
+            return "[" + this.name + ", " + this.color + "]"
+        }
+
+    };
+
+
+    bus1 = new Bus("Tata", "red");
+    console.log(bus1.name);
+
+    console.log(bus1.display());
+
+</script>
+
+<script>
+    // Creating Objects using ES6 features
+    console.log("\n\n***** Inheritance in ES6 ********");
+
+    class LuxuryBus extends Bus {
+
+        constructor(name, color, hasAC, hasVideoPlayer){
+            super(name, color);
+            this.hasAC = hasAC;
+            this.hasVideoPlayer=hasVideoPlayer;
+        }
+
+        // override the super class's display
+        display() {
+            return super.display() + ", [AC="  + this.hasAC + ",VIDEO=" + this.hasVideoPlayer + " ]";
+        }
+        
+    };
+
+
+    luxBus1 = new LuxuryBus("Toyota", "purple", true, false);
+    console.log(luxBus1.name);
+
+    console.log(luxBus1.display());    
 
 </script>
