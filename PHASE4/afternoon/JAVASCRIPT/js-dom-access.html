@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+    
+
+</head>
+
+<body>
+<p id="p100">
+    Hello World
+</p>
+
+<div onclick="f1()">Click Me! </div>
+
+<script>
+
+//Function Definition
+    function f1() {
+
+    var x = document.getElementById("p100");
+    console.log("Content of the first p tag" +  x.textContent);
+
+    x.textContent = "Hello India";
+
+    x.style="color:red";
+
+    //x.style="visibility:hidden";
+    }
+
+    // Function invocation
+    // f1();
+
+</script>
+
+</body>
+
+
+</html>
