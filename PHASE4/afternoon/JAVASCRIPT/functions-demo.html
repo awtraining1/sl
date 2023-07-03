@@ -1,0 +1,27 @@
+<script>
+
+
+function add(x,y){
+return x+y;
+};
+
+let result = add(4,5); // 9
+console.log(result);
+
+// In JS we can use functions to create objects
+function Car(name,color){
+    this.name =  name;
+    this.color =  color;
+
+    this.display = function (){
+        return "["+ this.name + ", " + this.color +"]"
+    }
+    
+};
+
+car1 = new Car("Maruti", "red");
+console.log(car1.name);
+
+console.log( car1.display() );
+
+</script>

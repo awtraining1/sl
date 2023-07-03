@@ -1,0 +1,36 @@
+<script>
+
+    var x = 100; // Global scoped variable
+
+    y = 101; // Global scoped variable
+
+    function f1() {
+        var x1 = 100; //Local scope variable
+        console.log(" inside f1 x1=" + x1);
+
+        var i = 11;
+
+        z = 999;
+
+        {
+            let p = 200; // Local scope
+            console.log("1 inside f1 p=" + p);
+        }
+
+        // console.log("2 inside f1 p=" +p); ERR because p is blocked variable
+
+        for (let i = 0; i < 4; i++) {
+            console.log("i=" + i);
+        }
+
+        ///50 lines
+        console.log("congragulations to all the " + i + " players for participating in this match");
+
+    }
+
+    f1();
+    // console.log("x1=" +x1); ERROR, because x1 is local scoped
+    console.log("z=" + z);
+
+
+</script>
