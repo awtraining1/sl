@@ -1,0 +1,33 @@
+<script>
+// In JS we can use functions to create objects
+function Car(name, color) {
+        this.name = name;
+        this.color = color;
+
+        this.display = function () {
+            return "[" + this.name + ", " + this.color + "]"
+        }
+    };
+
+    car1 = new Car("Maruti", "red");
+    console.log(car1.name);
+    console.log(" 1 car1.noOfSeats = " + car1.noOfSeats);
+
+    console.log(car1.display());
+
+    // Use prototype to add new properties
+    // and to add additional methods.
+    Car.prototype.noOfSeats = 4;
+    console.log(" 2 car1.noOfSeats = " + car1.noOfSeats);
+
+    car2 = new Car("Swift", "red");
+    console.log(car1.name);
+    console.log(" 11 car2.noOfSeats = " + car2.noOfSeats);
+    car2.noOfSeats = 16;
+    console.log(" 12 car2.noOfSeats = " + car2.noOfSeats);
+
+    Car.prototype.display2 =  function () { return "Hello" };
+    console.log(car1.display2());
+
+
+</script>

@@ -1,0 +1,33 @@
+<script>
+
+
+
+function incrCounter(){
+
+    let counter = 10;
+
+    return function INCREMENT_COUNTER() { return ++counter;};
+
+};
+
+/*
+console.log(incrCounter());
+console.log(incrCounter());
+
+
+///// 1000 lines of code down
+counter =100;
+
+///// 1000 lines of code down
+console.log(incrCounter());
+*/
+
+let f1 = incrCounter() ; 
+console.log(f1());
+console.log(f1());
+console.log(f1());
+console.log(f1());
+
+
+
+</script>

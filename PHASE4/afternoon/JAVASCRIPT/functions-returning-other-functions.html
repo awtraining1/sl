@@ -1,0 +1,14 @@
+<script>
+
+    function f1() {
+
+        return function f2() { return 5; }
+
+    }
+
+   let x= f1(); // x now holds a function that was returned by f1 at line 5.
+
+   console.log ( x ); // will print the f2 definition
+   console.log ( x() ); //  5
+
+</script>

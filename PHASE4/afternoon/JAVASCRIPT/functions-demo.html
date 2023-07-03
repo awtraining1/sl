@@ -86,9 +86,13 @@
         }
 
         // override the super class's display
-        display() {
-            return super.display() + ", [AC="  + this.hasAC + ",VIDEO=" + this.hasVideoPlayer + " ]";
-        }
+        // using traditional way of writing functions 
+        // display() {
+        //     return super.display() + ", [AC="  + this.hasAC + ",VIDEO=" + this.hasVideoPlayer + " ]";
+        // }
+
+        // using modern (ES6) way of writing functions
+        display = () =>  super.display() + ", [AC="  + this.hasAC + ",VIDEO=" + this.hasVideoPlayer + " ]";
         
     };
 
