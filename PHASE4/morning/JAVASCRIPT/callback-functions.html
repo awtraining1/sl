@@ -53,6 +53,7 @@
         console.log("Bonjour " + x);
     }
 
+    // argument g and h are functions
     function f112(name, g, h) { 
         //if ( user is France)       
         g(name);
@@ -76,5 +77,19 @@ return function xyz(){ return 5;}
 // Let's call the above function
 let pqr = f123();// pqr now holds a function that was returned by f123
 console.log("pqr="+ pqr()); // logs 5
+
+</script>
+
+
+<script>
+
+function g(){
+    console.log("Hello from G");
+}
+
+setTimeout(g, 7000);
+
+console.log("Hi 1");
+console.log("Hi 2");
 
 </script>
