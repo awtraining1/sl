@@ -1,0 +1,29 @@
+<script>
+
+function incrCounter(){   
+    let counter=1;
+
+    return function INCREMENT_BY_ONE() { return ++counter};
+}
+
+/*
+console.log(incrCounter());
+console.log(incrCounter());
+////100 lines
+
+counter=100;
+
+//////
+console.log(incrCounter());
+console.log(incrCounter());
+*/
+
+let f1 = incrCounter(); // f1 = INCREMENT_BY_ONE()
+
+console.log(f1());
+console.log(f1());
+console.log(f1());
+console.log(f1());
+
+
+</script>
