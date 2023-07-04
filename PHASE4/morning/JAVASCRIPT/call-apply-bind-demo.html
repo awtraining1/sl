@@ -1,0 +1,78 @@
+<script>
+    console.log("***** CALL DEMO **** ");
+
+    let car = {
+
+        name: "Tata",
+
+        color: "Red",
+
+        display: function (cost, warranty) { return this.name + ", " + this.color + "," + cost + ", warranty=" + warranty }
+
+    }
+
+    console.log(car.display());
+
+    let car1 = {
+        name: "Toyota",
+
+        color: "White",
+    }
+
+    let result = car.display.call(car1, 20000, 3);
+    console.log(result);
+</script>
+
+<script>
+    console.log("\n\n***** APPLY DEMO **** ");
+
+    let bus = {
+
+        name: "Tata Bus",
+
+        color: "Red",
+
+        display: function (cost, warranty) { return this.name + ", " + this.color + "," + cost + ", warranty=" + warranty }
+
+    }
+
+    console.log(car.display());
+
+    let bus1 = {
+        name: "Toyota Bus",
+
+        color: "White",
+    }
+
+    let result1 = bus.display.apply(bus1, [20000, 3]);
+    console.log(result1);
+</script>
+
+<script>
+    console.log("\n\n***** BIND DEMO **** ");
+
+    let truck = {
+
+        name: "Tata Truck",
+
+        color: "Red",
+
+        display: function (cost, warranty) {
+             console.log( this.name + ", " + this.color + 
+             "," + cost + ", warranty=" + warranty  );
+            }
+
+    }
+
+
+    let truck1 = {
+        name: "Toyota Truck",
+
+        color: "White",
+    }
+
+    //setTimeout(truck.display.apply(truck1), 5000)
+    // setTimeout(truck.display.bind(truck1), 5000);
+
+    
+</script>
