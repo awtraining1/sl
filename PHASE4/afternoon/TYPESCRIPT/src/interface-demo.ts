@@ -15,8 +15,10 @@ class Person implements Human{
     walkFast():void {
         console.log("Walking ...., fast walking");
     }
-
 }
+
+let  per1: Person = new Person("Sujata");
+per1.walkFast();
 
 abstract class ABC{
 
