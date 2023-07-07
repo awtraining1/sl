@@ -7,3 +7,11 @@ var ModelYear;
     ModelYear[ModelYear["ModelYear2024"] = 2024] = "ModelYear2024";
 })(ModelYear || (ModelYear = {}));
 console.log(ModelYear.ModelYear2023);
+class Bike {
+    constructor(name, mileage, modelYr) {
+        this.name = name;
+        this.mileage = mileage;
+        this.modelYr = modelYr;
+    }
+}
+let bike1 = new Bike("Bullet", 100, ModelYear.ModelYear2023);
