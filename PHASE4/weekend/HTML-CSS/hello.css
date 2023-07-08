@@ -31,7 +31,7 @@ ul > li > ol > li {
     text-decoration: overline ;
 }
 
-p::first-line {
+p::first-letter {
     color: blue;
     text-transform: uppercase;
   }
