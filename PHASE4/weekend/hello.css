@@ -1,0 +1,37 @@
+p {
+    background-color: aqua;
+}
+
+input {
+    background-color: yellow;
+}
+
+/* ul {
+    color: blue;
+} */
+
+ul>h2 {
+    color: olivedrab;
+    text-decoration: underline ;
+}
+
+ul > li {
+    color: darkviolet;
+}
+
+ul > li > ol > li {
+    color: rgb(211, 0, 7);
+}
+
+/* #laptop1{
+    color: blue;
+} */
+
+.class1{
+    text-decoration: overline ;
+}
+
+p::first-line {
+    color: blue;
+    text-transform: uppercase;
+  }
