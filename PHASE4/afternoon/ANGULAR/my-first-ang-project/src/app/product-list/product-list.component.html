@@ -3,7 +3,11 @@
 
     <table border="2">
         <tr>
-            <th>IMAGE</th>            <th>NAME</th>            <th>PRICE</th>            <th>SPECIAL</th>
+            <th>IMAGE</th>
+            <th>NAME</th>
+            <th>PRICE</th>
+            <th>SPECIAL</th>
+            <th>IN STOCK</th>
         </tr>
         <div *ngFor="let prod of products">
 
@@ -13,6 +17,8 @@
                 <td> {{prod.price}}
                 <td>
                     <div [style.color]="prod.isSpecial ? 'red': 'green'">This product is Special</div>
+                <td>
+                    <div [class.inStock]="prod.inStock">This product is in Stock</div>
 
             </tr>
 

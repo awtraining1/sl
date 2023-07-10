@@ -5,6 +5,8 @@
 
 <div [style.color]="product.isSpecial ? 'red': 'green'">This product is Special</div>
 
+<div [class.inStock]="product.inStock">This product is in Stock</div>
+
 <ul>    
     <li>{{ product.name }} </li>
     <li>{{ product.price }} </li>
