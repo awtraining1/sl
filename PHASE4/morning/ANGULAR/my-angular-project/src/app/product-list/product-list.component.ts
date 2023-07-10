@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit, OnChanges, OnDestroy{
     
     this.products = [ 
       new Product("Laptop", 60000, "assets/img/laptop.jpg", "200"),
-      new Product("Keyboard", 600,  "assets/img/laptop.jpg","200"),
+      new Product("Keyboard", 600,  "assets/img/KeyB.jpg","200"),
       new Product("Mouse", 108,  "assets/img/laptop.jpg","200"),
       new Product("Printer", 12000.25, "assets/img/laptop.jpg","200"),
     ];
