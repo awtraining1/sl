@@ -12,6 +12,6 @@ export class ProductComponent{
   // name:string='Electronic Item';
   // price:number=0;
 
-  product:Product = new Product();
+  product:Product = new Product("Laptop", 1000);
 
 }
