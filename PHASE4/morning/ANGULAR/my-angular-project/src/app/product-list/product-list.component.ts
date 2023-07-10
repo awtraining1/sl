@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Product } from '../Product';
 
 @Component({
@@ -6,16 +6,32 @@ import { Product } from '../Product';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit, OnChanges, OnDestroy{
 
-  // products:Product[] = [ ];
+  products:Product[] = [ ];  
 
-  products:Product[] = [ 
-    new Product("Laptop", 60000),
-    new Product("Keyboard", 600),
-    new Product("Mouse", 108),
-    new Product("Printer", 12000.25), 
-  ];
+  constructor(){
+    console.log("ProductListComponent: Constructor called ");
+  }
 
+  ngOnInit(): void {
+    console.log("ProductListComponent: ngOnInit called ");
+    
+    this.products = [ 
+      new Product("Laptop", 60000, "./laptop.jpg", "200"),
+      new Product("Keyboard", 600, "./laptop.jpg","200"),
+      new Product("Mouse", 108, "./laptop.jpg","200"),
+      new Product("Printer", 12000.25, "./laptop.jpg","200"),
+    ];
+
+  }
+
+  ngOnChanges():void{
+    console.log("ProductListComponent: ngOnChanges called ")
+  }
+
+  ngOnDestroy():void{
+    console.log("ProductListComponent: ngOnDestroy called ")
+  }
 
 }
