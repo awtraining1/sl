@@ -11,10 +11,10 @@ export class ProductListComponent {
   //products: Product[] = [];
 
   products: Product[] = [
-    new Product("Laptop", 60000),
-    new Product("Keyboard", 560),
-    new Product("Mouse", 600),
-    new Product("Monitor", 20000),
+    new Product("Laptop", 60000,"assets/images/laptop.jpg"),
+    new Product("Keyboard", 560, "assets/images/keyboard.jpg"),
+    new Product("Mouse", 600,''),
+    new Product("Monitor", 20000,''),
   ]
 
 }

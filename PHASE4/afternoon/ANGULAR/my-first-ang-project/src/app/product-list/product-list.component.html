@@ -5,7 +5,7 @@
         <tr><th>NAME</th><th>PRICE</th></tr>
         <div *ngFor="let prod of products">
 
-           <tr> <td> {{prod.name}} <td> {{prod.price}} </tr>
+           <tr><td> <img [src]="prod.imgSrc" width="150px" height="120px" > <td> {{prod.name}} <td> {{prod.price}} </tr>
 
         </div>
 
