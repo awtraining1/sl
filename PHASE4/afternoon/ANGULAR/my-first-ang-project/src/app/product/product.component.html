@@ -3,7 +3,7 @@
 <p>Product Details</p>
 <img [src]="product.imgSrc" width="150px" height="120px" >
 
-
+<div [style.color]="product.isSpecial ? 'red': 'green'">This product is Special</div>
 
 <ul>    
     <li>{{ product.name }} </li>

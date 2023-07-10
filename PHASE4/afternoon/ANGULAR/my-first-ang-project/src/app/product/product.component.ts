@@ -10,7 +10,7 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   // name:string='HP Laptop';
   // price:number=2000;
 
-  product: Product = new Product("Laptop",2000,"assets/images/laptop.jpg");
+  product: Product = new Product("Laptop",2000,"assets/images/laptop.jpg", true);
 
   constructor(){
     console.log("ProductComponent : constructor called")
