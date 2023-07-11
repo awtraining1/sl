@@ -10,8 +10,11 @@ import { Title } from '@angular/platform-browser';
 
 export class AppComponent {
 
+  noOfProductViews:number=0;
+
   parentFunc1(evt:any):void{
     console.log(`Got an event from the child ${evt}`);
+    this.noOfProductViews=evt;
   }
 
 }
