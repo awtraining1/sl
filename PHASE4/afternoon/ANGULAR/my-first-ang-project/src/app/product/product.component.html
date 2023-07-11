@@ -12,6 +12,9 @@
     <li>{{ product.price }} </li>
 </ul>
 
+<br><br>
 <button class="btn btn-primary " (click)="addLike()" > Like! </button>
 
+<br><br>
+Add your Comments : <input type="text"  (input)="addComments(comment.value)" #comment> 
 </div>
