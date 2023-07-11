@@ -9,12 +9,12 @@
 
 <ul>    
     <li>{{ product.name }} </li>
-    <li>{{ product.price }} </li>
+    <li>{{ product.price }} </li>    
 </ul>
 
 <br><br>
 <button name="b1" class="btn btn-primary " (click)="addLike($event)" > Like! </button><br><br>
-<button name="b2" class="btn btn-primary " (click)="addLike($event)" > Like! </button>
+<button name="b2" class="btn btn-primary " (click)="addLike($event)" > Rate 5 Stars </button>
 
 <br><br>
 Add your Comments : <input type="text"  (input)="addComments(comment.value)" #comment> 

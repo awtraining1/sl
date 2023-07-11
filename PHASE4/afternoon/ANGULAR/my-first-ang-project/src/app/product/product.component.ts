@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, OnDestroy  } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, Input  } from '@angular/core';
 import { Product } from '../classes/Product';
 
 @Component({
@@ -10,6 +10,8 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   // name:string='HP Laptop';
   // price:number=2000;
 
+  @Input("message") msg:string='';
+
   product: Product = new Product("Laptop",2000,"assets/images/laptop.jpg", true, true);
 
   constructor(){
@@ -17,11 +19,12 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit(){
-    console.log("ProductComponent : ngOnInit called")
+    console.log("ProductComponent : ngOnInit called");
+    console.log(`Here is the message from parent : ${this.msg}`);
   }
 
   ngOnChanges(){
-    console.log("ProductComponent : ngOnChanges called")
+    console.log("ProductComponent : ngOnChanges called");
   }
 
   ngOnDestroy(){
