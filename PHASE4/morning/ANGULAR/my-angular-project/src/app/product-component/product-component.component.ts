@@ -26,4 +26,8 @@ export class ProductComponent {
     console.log("Mouse moved at: " + event);
   }
 
+  trackTextFeild(val:string): void {
+    console.log("Text Input  is: " + val );
+  }
+
 }

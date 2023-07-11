@@ -11,6 +11,9 @@
     <li><div [class.inStock]="product.inStock"> IN STOCK </div></li>
 </ul>
 
+<br> EVENT BINIDING DEMO 
+<input type="text" (input)="trackTextFeild(t1.value)" #t1 >
+<br>
 <button name="b1" class="btn btn-primary" (click)="onSave($event)">Save</button>
 <button name="b2" class="btn btn-primary" (click)="onSave($event)">Save</button>
 
