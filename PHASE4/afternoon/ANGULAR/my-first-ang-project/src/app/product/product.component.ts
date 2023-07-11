@@ -25,7 +25,11 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy(){
-    console.log("ProductComponent : ngOnDestroy called")
+    console.log("ProductComponent : ngOnDestroy called");
+  }
+
+  addLike():void{
+    console.log("clicked the like button! ")
   }
 
 }
