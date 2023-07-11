@@ -13,7 +13,8 @@
 </ul>
 
 <br><br>
-<button class="btn btn-primary " (click)="addLike()" > Like! </button>
+<button name="b1" class="btn btn-primary " (click)="addLike($event)" > Like! </button><br><br>
+<button name="b2" class="btn btn-primary " (click)="addLike($event)" > Like! </button>
 
 <br><br>
 Add your Comments : <input type="text"  (input)="addComments(comment.value)" #comment> 
