@@ -11,12 +11,13 @@
     <li><div [class.inStock]="product.inStock"> IN STOCK </div></li>
 </ul>
 
-<br> EVENT BINIDING DEMO 
+<br> ONE WAY EVENT BINIDING DEMO 
 <input type="text" (input)="trackTextFeild(t1.value)" #t1 >
 <br>
 <button name="b1" class="btn btn-primary" (click)="onSave($event)">Save 1</button>
 <br>
 <button name="b2" class="btn btn-primary" (click)="onSave($event)">Save 2</button>
 
-
+<br> TWO WAY EVENT BINIDING DEMO 
+<input type="text" [(ngModel)]="product.name" >
 </div>
