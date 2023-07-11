@@ -1,9 +1,9 @@
-<div style="border: 2px solid red">
+<div   style="border: 2px solid red">
 
 <p> MY PRODUCT from the Product Component</p>
 
 <h3>Product Details</h3>
-<img [src]="product.imageUrl" [width]="product.imageWidth" height="100px">
+<img  (mouseenter)="trackMouse($event)" [src]="product.imageUrl" [width]="product.imageWidth" height="100px">
 <ul>
     <li>Name : {{product.name}}</li>
     <li>Price : {{product.price}}</li>
@@ -11,6 +11,9 @@
     <li><div [class.inStock]="product.inStock"> IN STOCK </div></li>
 </ul>
 
-<button class="btn btn-primary" (click)="onSave()">Save</button>
+<button name="b1" class="btn btn-primary" (click)="onSave($event)">Save</button>
+<button name="b2" class="btn btn-primary" (click)="onSave($event)">Save</button>
+
+
 
 </div>

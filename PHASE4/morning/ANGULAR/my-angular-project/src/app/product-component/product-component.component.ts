@@ -17,8 +17,13 @@ export class ProductComponent {
   product: Product = new Product("Laptop", 1000, "assets/img/laptop.jpg", "200", true, true );
 
   // Behaviours
-  onSave(): void {
-    console.log("Button clicked");
+  onSave(event:any): void {
+    console.log("Button clicked" + event.target.name );
+  }
+
+  
+  trackMouse(event:any): void {
+    console.log("Mouse moved at: " + event);
   }
 
 }
