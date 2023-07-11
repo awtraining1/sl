@@ -10,18 +10,18 @@
             <th> Special </th>
         </tr>
 
-        <div *ngFor="let p of products">
+        <tr *ngFor="let p of products">
 
-            <tr>
+           
                 <td><img [src]="p.imageUrl" [width]="p.imageWidth" height="100px">
                 <td> {{p.name}}
                 <td> {{p.price}}
-                <td>
-                    <td><div [style.color]="p.isSpecial?'red':'green'"> SPECIAL </div>
-                </td>
-            </tr>
+                
+                    <td><div [style.color]="p.isSpecial?'red':'green'" [style.visibility]="p.isSpecial?'visible':'hidden'"> SPECIAL </div>
+                
+           
 
-        </div>
+       
 
     </table>
 
