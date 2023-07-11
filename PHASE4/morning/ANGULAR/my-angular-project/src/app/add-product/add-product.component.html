@@ -1,0 +1,31 @@
+<div   style="border: 2px solid greenyellow">
+<div class="container">
+
+    <form #addProductForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required 
+            [(ngModel)]="product.name" name="name"
+                #name="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Price</label>
+            <input type="text" class="form-control" id="price" required 
+            [(ngModel)]="product.price" name="price"
+                #name="ngModel">
+        </div>
+
+        <br>
+        
+        <button type="submit" class="btn btn-primary" > ADD PRODUCT </button>
+
+
+    </form>
+
+
+</div>
+
+
+</div>
