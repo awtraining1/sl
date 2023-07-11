@@ -1,17 +1,29 @@
 <div style="border: 2px  solid green">
 
-<h2>Product list</h2>
+    <h2>Product list</h2>
 
-<table border="2">
-    <tr><th> Image  <th> Name  <th> Price </th></tr>
+    <table border="2">
+        <tr>
+            <th> Image
+            <th> Name
+            <th> Price </th>
+            <th> Special </th>
+        </tr>
 
-<div *ngFor="let p of products">
+        <div *ngFor="let p of products">
 
-    <tr> <td><img [src]="p.imageUrl" [width]="p.imageWidth" height="100px"> <td> {{p.name}} <td> {{p.price}}  </td></tr>
+            <tr>
+                <td><img [src]="p.imageUrl" [width]="p.imageWidth" height="100px">
+                <td> {{p.name}}
+                <td> {{p.price}}
+                <td>
+                    <td><div [style.color]="p.isSpecial?'red':'green'"> SPECIAL </div>
+                </td>
+            </tr>
 
-</div>
+        </div>
 
-</table>
+    </table>
 
 
 </div>
