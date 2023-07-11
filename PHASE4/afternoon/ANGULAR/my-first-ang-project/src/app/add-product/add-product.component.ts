@@ -8,7 +8,7 @@ import { Product } from '../classes/Product';
 })
 export class AddProductComponent {
 
-  product!:Product;
+  product:Product = new Product('',0,'',true,true);
 
   OnSubmit():void{
     console.log(`Form submitted with values ${this.product.name} , ${this.product.price} `)
