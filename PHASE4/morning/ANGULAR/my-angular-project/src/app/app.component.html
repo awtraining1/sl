@@ -1,5 +1,11 @@
 <html>
   <h1>Welcome to ECommerce</h1>
+  <h2> TWO WAY BINDING DEMO </h2>
+  <app-sizer [(size)]="fontSizePx"></app-sizer>
+  <div [style.font-size.px]="fontSizePx" >Resizable Text</div>
+  
+  <br><br><br><br>
+
 <!--
 {{ title}}  {{ 3 + 5 < 10 }}</h1>
 
@@ -10,5 +16,11 @@ Product price = {{ 20 + 'INR' }}
 
 <h2>Below Content is from Product Component</h2> 
 <product/>
+
+<h2> TWO WAY BINDING DEMO </h2>
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<div [style.font-size.px]="fontSizePx" >Resizable Text</div>
+
+<br><br><br><br>
 
 </html>

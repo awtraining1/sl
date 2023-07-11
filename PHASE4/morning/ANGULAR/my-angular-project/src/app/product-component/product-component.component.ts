@@ -20,7 +20,6 @@ export class ProductComponent {
   onSave(event:any): void {
     console.log("Button clicked" + event.target.name );
   }
-
   
   trackMouse(event:any): void {
     console.log("Mouse moved at: " + event);

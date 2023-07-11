@@ -10,4 +10,6 @@ export class AppComponent {
   title = 'MY FIRST ANGULAR PROJECT';
 
   productPrice:string =20 + 'INR';
+
+  fontSizePx = 16;
 }
