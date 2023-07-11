@@ -8,6 +8,7 @@
     <li>Name : {{product.name}}</li>
     <li>Price : {{product.price}}</li>
     <li><div [style.color]="product.isSpecial?'red':'green'"> SPECIAL </div></li>
+    <li><div [class.inStock]="product.inStock"> IN STOCK </div></li>
 </ul>
 
 </div>

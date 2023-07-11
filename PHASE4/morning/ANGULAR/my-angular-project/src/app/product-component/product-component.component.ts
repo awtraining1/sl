@@ -13,6 +13,6 @@ export class ProductComponent {
   // price:number=0;
 
 
-  product: Product = new Product("Laptop", 1000, "assets/img/laptop.jpg", "200", true );
+  product: Product = new Product("Laptop", 1000, "assets/img/laptop.jpg", "200", true, true );
 
 }

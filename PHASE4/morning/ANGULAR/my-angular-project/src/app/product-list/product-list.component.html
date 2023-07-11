@@ -1,6 +1,8 @@
 <div style="border: 2px  solid green">
 
-    <h2>Product list</h2>
+    <div class="h2">Product list</div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
 
     <table border="2">
         <tr>
@@ -8,6 +10,7 @@
             <th> Name
             <th> Price </th>
             <th> Special </th>
+            <th> IN Stock </th>
         </tr>
 
         <tr *ngFor="let p of products">
@@ -18,8 +21,8 @@
                 <td> {{p.price}}
                 
                     <td><div [style.color]="p.isSpecial?'red':'green'" [style.visibility]="p.isSpecial?'visible':'hidden'"> SPECIAL </div>
-                
-           
+                <td><div [class.inStock]="p.inStock"> IN STOCK </div>
+         </tr>  
 
        
 
