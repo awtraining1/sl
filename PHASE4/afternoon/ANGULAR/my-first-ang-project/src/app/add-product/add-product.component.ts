@@ -10,4 +10,8 @@ export class AddProductComponent {
 
   product!:Product;
 
+  OnSubmit():void{
+    console.log(`Form submitted with values ${this.product.name} , ${this.product.price} `)
+  }
+
 }
