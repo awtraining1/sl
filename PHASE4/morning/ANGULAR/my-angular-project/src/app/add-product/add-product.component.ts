@@ -12,7 +12,7 @@ product:Product = new Product('',0,'','100',true,true);
 
 
 onSubmit():void{
-  console.log(`Form submitted for product : ${this.product.name}, ${this.product.name}`);
+  console.log(`Form submitted for product : ${this.product.name}, ${this.product.price}`);
 }
 
 }
