@@ -10,5 +10,8 @@ import { Title } from '@angular/platform-browser';
 
 export class AppComponent {
 
-  
+  parentFunc1(evt:any):void{
+    console.log(`Got an event from the child ${evt}`);
+  }
+
 }

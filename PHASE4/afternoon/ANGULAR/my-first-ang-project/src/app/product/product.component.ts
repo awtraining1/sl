@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, OnDestroy, Input  } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, Input, Output, EventEmitter  } from '@angular/core';
 import { Product } from '../classes/Product';
 
 @Component({
@@ -10,7 +10,17 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   // name:string='HP Laptop';
   // price:number=2000;
 
+  productCounter:number=0;
+
   @Input("message") msg:string='';
+
+  @Output() helloChange = new EventEmitter<string>();
+
+  f1():void{
+    this.helloChange.emit(`Hi Parent, I got ${this.productCounter++} views`);
+    
+  }
+
 
   product: Product = new Product("Laptop",2000,"assets/images/laptop.jpg", true, true);
 
