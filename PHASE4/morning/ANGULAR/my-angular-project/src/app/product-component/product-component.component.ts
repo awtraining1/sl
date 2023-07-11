@@ -8,11 +8,17 @@ import { Product } from '../Product';
 })
 
 export class ProductComponent {
+  /* Component Data */
 
   // name:string='Electronic Item';
   // price:number=0;
 
 
   product: Product = new Product("Laptop", 1000, "assets/img/laptop.jpg", "200", true, true );
+
+  // Behaviours
+  onSave(): void {
+    console.log("Button clicked");
+  }
 
 }
