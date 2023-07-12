@@ -32,4 +32,8 @@ export class ProductService {
     return  new Product("Laptop", 60000,"assets/images/laptop.jpg", true, true);
   }
 
+  getProductFromBackend(id:number):Observable<Product>  {
+    return this.http.get<Product>(`${this.backEndUrl}/details/${id}`);   
+  }
+
 }
