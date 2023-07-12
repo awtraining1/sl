@@ -21,4 +21,14 @@ export class ProductService {
 
     return this.products;
   }
+
+  // get a product at index 
+  public getProduct(idx : number) : Product {
+      return this.products[idx];
+  }
+
+  // get a product at index 
+  public getNewProduct() : Product {
+    return new Product("",0,"","100",true,true);
+}
 }

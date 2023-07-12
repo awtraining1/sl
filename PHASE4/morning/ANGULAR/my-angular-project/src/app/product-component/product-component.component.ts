@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'product',
@@ -7,14 +8,23 @@ import { Product } from '../Product';
   styleUrls: ['./product-component.component.css']
 })
 
-export class ProductComponent {
+export class ProductComponent implements OnInit{
   /* Component Data */
 
   // name:string='Electronic Item';
   // price:number=0;
 
 
-  product: Product = new Product("Laptop", 1000, "assets/img/laptop.jpg", "200", true, true );
+  product!: Product;
+
+  constructor(private productService: ProductService) {
+    console.log("ProductComponent: Constructor called ");
+  }
+
+  ngOnInit(){
+    this.product= this.productService.getNewProduct();
+  }
+
 
   // Behaviours
   onSave(event:any): void {
