@@ -18,8 +18,7 @@ import com.ecommerce.entity.EProduct;
 import com.ecommerce.repositries.EProductRepo;
 
 @RestController
-@RequestMapping("/products")
-@CrossOrigin("localhost:8081")
+@RequestMapping("/product")
 public class ProductRestController {
 	@Autowired
 	EProductRepo eProductRepo;
