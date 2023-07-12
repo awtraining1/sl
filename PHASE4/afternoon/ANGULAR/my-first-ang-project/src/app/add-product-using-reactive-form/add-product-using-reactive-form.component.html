@@ -22,14 +22,16 @@
         <div *ngIf="submitted && f['price'].errors" class="invalid-feedback">
             <div *ngIf="f['price'].errors['required']">Price is required</div>
         </div>
+        
+        <div *ngIf="submitted && f['price'].errors" class="invalid-feedback">
+            <div *ngIf="f['price'].hasError('min')">Price min is voilated</div>
+        </div>
 
     </div>
 
     <div class="form-group">
         <button class="btn btn-primary">Add Product</button>
     </div>
-
-
 
 </form>
 
