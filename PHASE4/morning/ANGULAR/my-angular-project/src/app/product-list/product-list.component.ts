@@ -7,26 +7,25 @@ import { ProductService } from '../product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit, OnChanges, OnDestroy{
+export class ProductListComponent implements OnInit, OnChanges, OnDestroy {
 
-  products:Product[] = [ ]; 
+  products: Product[] = [];
 
-  constructor(private productService:ProductService){
+  constructor(private productService: ProductService) {
     console.log("ProductListComponent: Constructor called ");
   }
 
   ngOnInit(): void {
     console.log("ProductListComponent: ngOnInit called ");
-    
-   this.products =  this.productService.getAllProducts();    
 
+    this.products = this.productService.getAllProducts();
   }
 
-  ngOnChanges():void{
+  ngOnChanges(): void {
     console.log("ProductListComponent: ngOnChanges called ")
   }
 
-  ngOnDestroy():void{
+  ngOnDestroy(): void {
     console.log("ProductListComponent: ngOnDestroy called ")
   }
 
