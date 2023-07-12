@@ -8,7 +8,7 @@ import { Product } from '../Product';
 })
 export class AddProductComponent {
 
-product:Product = new Product('',0,'','100',true,true);
+product:Product = new Product(0,'',0,'','100',true,true);
 
 
 onSubmit():void{

@@ -12,6 +12,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { AddProductUsingReactiveFormComponent } from './add-product-using-reactive-form/add-product-using-reactive-form.component';
 
 import { ProductService } from './product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ProductService } from './product.service';
     AddProductUsingReactiveFormComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

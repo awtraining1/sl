@@ -18,7 +18,11 @@ export class ProductListComponent implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     console.log("ProductListComponent: ngOnInit called ");
 
-    this.products = this.productService.getAllProducts();
+    // this.products = this.productService.getAllProducts();
+    
+    this.productService.getAllProducts().subscribe(
+      (response) => { this.products = response; },
+      (error) => { console.log(error); });
   }
 
   ngOnChanges(): void {
