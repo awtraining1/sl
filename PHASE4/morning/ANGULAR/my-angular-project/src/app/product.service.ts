@@ -31,8 +31,9 @@ export class ProductService {
   }
 
   // get a product at index 
-  public getProduct(idx : number) : Product {
-      return this.products[idx];
+  public getProduct(idx : number) : Observable<Product>  {
+      //return this.products[idx];
+      return this.http.get<Product>(`${this.backEndUrl}/details/${idx}`);
   }
 
   // get a product at index 

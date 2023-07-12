@@ -14,15 +14,17 @@ export class ProductComponent implements OnInit{
   // name:string='Electronic Item';
   // price:number=0;
 
-
   product!: Product;
 
   constructor(private productService: ProductService) {
     console.log("ProductComponent: Constructor called ");
   }
 
-  ngOnInit(){
-    this.product= this.productService.getNewProduct();
+  ngOnInit() {
+    //this.product= this.productService.getNewProduct();
+    this.productService.getProduct(3).subscribe(
+      (response) => { this.product = response; },
+      (error) => { console.log(error); });
   }
 
 
