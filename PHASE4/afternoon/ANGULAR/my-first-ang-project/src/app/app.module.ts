@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AddProductUsingReactiveFormComponent } from './add-product-using-reactive-form/add-product-using-reactive-form.component';
 import { ProductService } from './product.service';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductService } from './product.service';
     ProductComponent,
     ProductListComponent,
     AddProductComponent,
-    AddProductUsingReactiveFormComponent
+    AddProductUsingReactiveFormComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,HttpClientModule

@@ -4,8 +4,18 @@
 
 <div class="mt-4 p-4 bg-primary text-white rounded">
     <h1 class="text-center">Welcome to ECommerce</h1>
-    <p>Great products are great prices.</p>
+    <p highlight >Great products are great prices.</p>
 </div>
+
+<p highlight>{{'Hello' | uppercase}}</p>
+<p>pi (.5-5): {{3.1454646 | number:'.5-5'}}</p>
+
+<h2>Pipe Example</h2>
+<h4>1. Today is {{today}}</h4>
+<h4>2. Today is {{today | date}}</h4>
+<h4>3. Today is {{today | date:"dd/MM/yyyy"}}</h4>
+
+<h4>{{myProduct|json}} </h4>
 
 <br>
 <add-product></add-product>
