@@ -25,8 +25,7 @@ export class ProductService {
     //   new Product("Mouse", 108,  "assets/img/laptop.jpg","200", false, true),
     //   new Product("Printer", 12000.25, "assets/img/laptop.jpg","200", true, false),
     // ];
-    //return this.products;
-
+    //return this.products;    
     return this.http.get<Product[]>(`${this.backEndUrl}/list`);    
   }
 

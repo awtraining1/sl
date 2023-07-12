@@ -5,6 +5,7 @@
 <h3>Product Details</h3>
 <img  (mouseenter)="trackMouse($event)" [src]="product.imageUrl" [width]="product.imageWidth" height="100px">
 <ul>
+    <li>Name : {{product.id}}</li>
     <li>Name : {{product.name}}</li>
     <li>Price : {{product.price}}</li>
     <li><div [style.color]="product.isSpecial?'red':'green'"> SPECIAL </div></li>

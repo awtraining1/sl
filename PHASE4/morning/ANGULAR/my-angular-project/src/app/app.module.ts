@@ -13,6 +13,7 @@ import { AddProductUsingReactiveFormComponent } from './add-product-using-reacti
 
 import { ProductService } from './product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ColorDirective } from './color.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductListComponent,
     SizerComponent,
     AddProductComponent,
-    AddProductUsingReactiveFormComponent
+    AddProductUsingReactiveFormComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule
