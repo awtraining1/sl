@@ -6,7 +6,7 @@ export class Product{
   isSpecial:boolean=false;
   inStock:boolean=true;
 
-  constructor(name:string, price:number,imgSrc:string,isSpecial:boolean,inStock:boolean){
+  constructor(name:string='', price:number=0,imgSrc:string='',isSpecial:boolean=false,inStock:boolean=false){
     this.name = name;
     this.price = price;
     this.imgSrc=imgSrc;
