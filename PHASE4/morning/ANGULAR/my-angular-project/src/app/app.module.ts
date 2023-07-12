@@ -11,6 +11,8 @@ import { SizerComponent } from './sizer/sizer.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AddProductUsingReactiveFormComponent } from './add-product-using-reactive-form/add-product-using-reactive-form.component';
 
+import { ProductService } from './product.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { AddProductUsingReactiveFormComponent } from './add-product-using-reacti
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
