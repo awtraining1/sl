@@ -17,11 +17,12 @@
 
         <div class="form-group">
             <label for="name">Price</label>
-            <input type="number" class="form-control" id="price" required  minlength="2" maxlength="6"
+            <input type="text" class="form-control" id="price" required  minlength="2" maxlength="6"
             [(ngModel)]="product.price" name="price"
                 #price="ngModel">
         </div>
 
+       
         <div [hidden]="price.valid || price.pristine"       class="alert alert-danger">
             Price should be b/w 2 and 6 digits.
             </div>
