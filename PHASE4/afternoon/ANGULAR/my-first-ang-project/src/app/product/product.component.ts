@@ -21,10 +21,8 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   f1():void{
-    this.helloChange.emit(`Hi Parent, I got ${this.productCounter++} views`);
-    
+    this.helloChange.emit(`Hi Parent, I got ${this.productCounter++} views`);    
   }
-
 
   product!: Product;  
 

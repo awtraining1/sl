@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -18,7 +20,7 @@ import { ProductService } from './product.service';
     AddProductUsingReactiveFormComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule,HttpClientModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
