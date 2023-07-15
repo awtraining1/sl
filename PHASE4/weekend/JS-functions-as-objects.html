@@ -1,37 +1,55 @@
 <html>
-    <head>
-        <script>
-            console.log("****** FUNCTIONS AS OBJECTS *****");
 
-            function Car(name, mancYear){
+<head>
+    <script>
+        console.log("****** FUNCTIONS AS OBJECTS *****");
 
-                this.name = name;
-                this.mancYear =mancYear;
+        function Car(name, mancYear) {
 
-                this.display = function (){
-                    console.log("INSIDE display()");
-                    console.log("Car name="+this.name + ", year of manufacture="+this.mancYear);
-                }
+            this.name = name;
+            this.mancYear = mancYear;
 
-            };
+            this.display = function () {               
+                console.log("Car name=" + this.name + ", year of manufacture=" + this.mancYear);
+            }
 
-            var car1 = new Car("Toyota", 2023);
-
-            console.log("car1 name="+car1.name + ", year of manufacture="+car1.mancYear);
-
-            car1.name="Tesla";
-            console.log("car1 name="+car1.name + ", year of manufacture="+car1.mancYear);
+            this.getName = function () {               
+                return this.name;
+            }
 
 
-            car1.display();
+        };
 
-        </script>
+        var car1 = new Car("Toyota", 2023);
 
-    </head>
+        console.log("car1 name=" + car1.name + ", year of manufacture=" + car1.mancYear);
 
-    <body>
+        car1.name = "Tesla";
+        console.log("car1 name=" + car1.name + ", year of manufacture=" + car1.mancYear);
 
 
-    </body>
+        car1.display();
+        var car1Name = car1.getName();
+        console.log("car1 name using the getName function =" +car1Name);
+
+    </script>
+
+    <script>
+        console.log("\n\n****** OBJECT LITERAL *****");
+        var car2 = {
+            name:"Porsche",
+            mancYear:2023,
+        };
+
+        console.log("car2 name=" + car2.name + ", year of manufacture=" + car2.mancYear);
+
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
 
 </html>
