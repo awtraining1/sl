@@ -7,20 +7,28 @@
 
             console.log("1. a1="+a1);
 
-            function g1(){
+            function g1(x,y){ // x and y are local
                 // Local variables (function scoped variables);
                 var p1=75;
 
                 console.log("Inside f1, p1="+p1);
 
                 console.log("Inside f1, a1="+a1);
+
+                c=100;
+                console.log("Inside f1, c="+c);
             }
 
             g1();
 
-            console.log("Outside f1, p1="+p1);
+            //console.log("Outside f1, p1="+p1); // ERROR
 
             console.log("2. a1="+a1);
+
+            console.log("Outside f1, c="+c);
+
+            //NOTE variables decl without using var keyword 
+            // are ALWAYS GLOBAL
 
         </script>
 
