@@ -13,12 +13,22 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
         </script>
 
+        <script>
+            var x = 70;
+            function f1(){
+                 
+                document.getElementById("pb2").style="width:"+(x++)+"%";
+            }
+        </script>
+
 </head>
 
 <body>
 
     <div class="container">
         <br><br>Progress Bar Demo
+        <button onclick="f1()">CLICK to INCrease the progress</button>
+        <br><br>
 
         <div class="progress">
             <div class="progress-bar" style="width:50%">
@@ -27,7 +37,7 @@
 
         <br>
         <div class="progress">
-            <div class="progress-bar bg-warning" style="width:70%">
+            <div  id="pb2" class="progress-bar bg-warning" style="width:70%">
                 70%
             </div>
         </div>
