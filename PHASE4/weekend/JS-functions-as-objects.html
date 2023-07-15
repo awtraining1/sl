@@ -8,12 +8,22 @@
                 this.name = name;
                 this.mancYear =mancYear;
 
+                this.display = function (){
+                    console.log("INSIDE display()");
+                    console.log("Car name="+this.name + ", year of manufacture="+this.mancYear);
+                }
+
             };
 
             var car1 = new Car("Toyota", 2023);
 
             console.log("car1 name="+car1.name + ", year of manufacture="+car1.mancYear);
 
+            car1.name="Tesla";
+            console.log("car1 name="+car1.name + ", year of manufacture="+car1.mancYear);
+
+
+            car1.display();
 
         </script>
 
