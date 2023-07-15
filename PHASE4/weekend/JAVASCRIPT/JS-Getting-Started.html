@@ -10,6 +10,7 @@
         var y="hello";
 
         var z=new Date();
+        var s1=new String("I am Full Stack Dev");
 
         x1=10;
 
@@ -26,8 +27,43 @@
             case "hi": console.log("o hi");break;
             case "hello": console.log("o hello"); break;
             default:console.log("o default");
-        }
+        };
 
+    </script>
+
+
+    <script>
+         console.log("**** FUNCTIONS ****");
+
+         // Defining a function in JS
+         function f1(){
+            //// statement
+            console.log("Inside f1");
+            //
+         }
+
+         function f2(){
+            //// statement
+            y1=6;
+            z1=3;
+
+            return y1+z1;
+         }
+
+         function f3(x,y){
+            //// statement
+           
+            return x+2*y;
+         }
+
+         // Calling the function in JS
+         f1(); // 
+
+         var z1= f2();
+         console.log("f2 returned "+z1);
+
+         var z2 = f3(100,40); // 180
+         console.log("f3(100,40) returned "+z2);
 
     </script>
     
