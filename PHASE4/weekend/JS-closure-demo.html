@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script>
+        var z=10;
+
+        function incrementCounter() {
+            var counter = 0;
+
+            return function incrCounterAndUpdateUI() {
+                counter++;
+                document.getElementById("counterPara").textContent = counter;
+            }
+
+        };
+
+        var f1 = incrementCounter();
+
+        counter = 1000;
+
+
+    </script>
+
+</head>
+
+<body>
+    <br><br><br><br>
+    Counter:<span id="counterPara">0</span>
+    <br><br>
+    <button onclick="f1();"> INCR COUNTER</button>
+
+</body>
+
+<script>
+    counter = 100;
+</script>
+
+</html>
