@@ -1,20 +1,30 @@
 <html>
-    <head>
-        <script src="ES6-classes.js">     
 
-         </script>
+<head>
+    <script src="ES6-classes.js"> </script>
 
-         <script>
-            let bus1 = new Bus("Tourist Bus", 1999);
+    <script>
+        let bus1 = new Bus("Tourist Bus", 1999);
 
         console.log(`Bus details Name=${bus1.name} and Model Year=${bus1.modelYr}`);
-         </script>
 
-    </head>
+        bus1.displayDetails();
 
-    <body>
+        console.log(`*BUS DETAILS* ${bus1.getName()} , ${bus1.getModelYr()} `)
+    </script>
+
+<script>
+    let spaceBus1 = new SpaceBus("Galaxy Bus", 2023, "Mars Planet");
+    console.log();
+    spaceBus1.displayDetails(spaceBus1);
+
+</script>
+
+</head>
+
+<body>
 
 
-    </body>
+</body>
 
 </html>
