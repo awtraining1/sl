@@ -32,6 +32,13 @@
         var car2 = new Car("Toyota2", 2024);
         console.log("Car 2 mileage " +car2.mileage);
 
+        // adding extra functions
+        Car.prototype.display2 = function (){
+            console.log("Car name=" + this.name + ", year of manufacture=" + this.mancYear + ", mileage=" + this.mileage);
+        };
+
+        car2.display2();
+
 
     </script>
 
