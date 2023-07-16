@@ -6,7 +6,7 @@ class Bus{
     }
 
     displayDetails = () => {
-        console.log(`BUS DETAILS Name=${this.name} and Model Year=${this.modelYr}`);
+        return `BUS DETAILS Name=${this.name} and Model Year=${this.modelYr}`;
     };
 
     getName = () => this.name;
@@ -26,8 +26,12 @@ class SpaceBus extends Bus{
 
     displayDetails = () => {
         //console.log(`SPACE BUS DETAILS Name=${this.name} and Model Year=${this.modelYr} Destination=${this.destination}`);
-        console.log(`SPACE BUS DETAILS ${this.getName()} ,  ${this.getModelYr()},  Destination=${this.destination}`);
+        return (`SPACE BUS DETAILS ${this.getName()} ,  ${this.getModelYr()},  Destination=${this.destination}`);
     };
+
+    // displayDetails = () => {
+    //     return `SPACE ${super.displayDetails()} , Destination=${this.destination}`;
+    // };
 }
 
 

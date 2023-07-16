@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <script>
+
+        console.log("****** FUNCTIONS PROTOTYPE PROPERTY *****");
+
+        function Car(name, mancYear) {
+
+            this.name = name;
+            this.mancYear = mancYear;
+
+            this.display = function () {
+                console.log("Car name=" + this.name + ", year of manufacture=" + this.mancYear);
+            }
+
+            this.getName = function () {
+                return this.name;
+            }
+        };
+
+        var car1 = new Car("Toyota", 2023);
+
+        //let carName1 = car1.getName();
+
+        Car.prototype.mileage=10;
+
+        console.log("Car 1 mileage " +car1.mileage);
+        car1.mileage =20;
+        console.log("Car 1 mileage " +car1.mileage);
+
+        var car2 = new Car("Toyota2", 2024);
+        console.log("Car 2 mileage " +car2.mileage);
+
+
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>
