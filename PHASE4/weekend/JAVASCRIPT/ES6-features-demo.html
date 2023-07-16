@@ -1,63 +1,74 @@
 <html>
-    <head>
-        <script>
-            console.log("******let and const demo *****")
 
-            let x=100;
+<head>
+    <script>
+        console.log("******let and const demo *****")
 
-            const PI=3.14;
+        let x = 100;
 
-            function f1(){
-                let x=22;
-                console.log("inside f1 x="+x);
+        const PI = 3.14;
 
-                let y=106;
+        function f1() {
+            let x = 22;
+            console.log("inside f1 x=" + x);
+
+            let y = 106;
 
 
-                {
-                    let z=99;
-                    console.log("1. z="+z);
-                    let x=33;
-                    console.log("inside f1 and inside a block x="+x);
-                }
-
-                //console.log("2. z="+z);
+            {
+                let z = 99;
+                console.log("1. z=" + z);
+                let x = 33;
+                console.log("inside f1 and inside a block x=" + x);
             }
 
-            f1();
+            //console.log("2. z="+z);
+        }
 
-            //let x=77;
-            console.log("outside f1 x="+x);
+        f1();
+
+        //let x=77;
+        console.log("outside f1 x=" + x);
 
             //PI=31.4; Error!
 
-        </script>
-
-        
-        <script>
-             console.log("\n\n******Arrow functions *****");
-
-             //function f1(){ }
-
-             f2 = () => { };
-
-             add =  (x,y) => x+y;
-
-             let result = add(4,5);
-             console.log("result="+result);
-
-             //PROBLEM: WaAF that 
-             
-        </script>
+    </script>
 
 
+    <script>
+        console.log("\n\n******Arrow functions *****");
 
-    </head>
+        //function f1(){ }
 
-    <body>
+        f2 = () => { };
+
+        add = (x, y) => x + y;
+
+        let result = add(4, 5);
+        console.log("result=" + result);
+
+        //PROBLEM: WaAF that takes a name as an arg and prints
+        // Hello <name>
+        let hello = (name) => {
+            console.log("Hello " + name);
+        };
+
+        hello("Sharukh");             
+    </script>
+
+    <script>
+        console.log("\n\n******String literals *****");
+        const hello2 = (name) => { console.log(`Hello ${name}`); };
+
+        hello2("Sharukh");
+
+    </script>
+
+</head>
+
+<body>
 
 
-    </body>
+</body>
 
 </html>
-
