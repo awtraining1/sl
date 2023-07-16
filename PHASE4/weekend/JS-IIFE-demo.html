@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script>
+        // IIFE function, that gets invoked only once
+        // as soon as it is defined. It is a not reusable function
+        (
+            function f1() {
+
+                //some secret stuff or data privacy stuff
+                console.log("Inside f1");
+
+            }
+        )();
+
+        // Regular function, that can be invoked any number of times.
+        function f2() {
+
+            //some secret stuff or data privacy stuff
+            console.log("Inside f2");
+
+        }
+
+          // f1(); ERROR
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

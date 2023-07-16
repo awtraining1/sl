@@ -2,7 +2,7 @@
 
 <head>
     <script>
-
+        console.log("****** Passing FUNCTIONS AS ARGUMENTS to some other functions *****");
         function f1(x) {
             console.log("Hello " + x);
         }
@@ -18,29 +18,62 @@
 
     </script>
 
-<script>
+    <script>
 
-    function frenchGreeting(x) {
-        console.log("Bonjour " + x);
-    }
+        function frenchGreeting(x) {
+            console.log("Bonjour " + x);
+        }
 
-    function englishGreeting(x) {
-        console.log("Hello " + x);
-    }
+        function englishGreeting(x) {
+            console.log("Hello " + x);
+        }
 
-    function greet(username, f, g) {
-      // Logic to find the user's language.
+        function greet(username, f, g) {
+            var french;
+            // Logic to find the user's language.
+            // let's assume the user is coming from french speaking region
+            french = true;
 
-      if(true)
-      f(username)
-      else
-      g(username);
+            if (french)
+                f(username);
+            else
+                g(username);
 
-    };
+        };
 
-    greet("Mohan", frenchGreeting,englishGreeting );
+        greet("Mohan", frenchGreeting, englishGreeting);
 
-</script>
+    </script>
+
+    <script>
+        console.log("\n\n******  FUNCTIONS returning functions *****");
+
+        function f2() {
+            console.log(" I am  f1 function")
+            ////// many statements
+
+            return function g2(x) { console.log(" I am  g2 function "+x);};
+        }
+
+        var z = f2(); // z will now be equal = g2 function;
+        
+        // because z is now a function, we can call it.
+        z("Hi");
+
+
+        function arithmeticOperation(operationName) {
+            if(operationName==="add")
+            return function add(x,y){return  x+y;}
+            if(operationName==="multiply")
+            return function multiply(x,y){return  x*y;}
+        };
+
+        var addFn = arithmeticOperation("add");
+        var res1  = addFn(4,5);
+        console.log("res1="+res1);
+
+
+    </script>
 
 </head>
 
