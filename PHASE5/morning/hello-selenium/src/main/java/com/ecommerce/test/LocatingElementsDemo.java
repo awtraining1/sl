@@ -38,6 +38,8 @@ public class LocatingElementsDemo {
 //		dayTF1.sendKeys("10");
 		
 		WebElement dayTF1 = driver.findElement(By.id("day"));
+		System.out.println("dayTF1 "+dayTF1);
+		dayTF1.clear();
 		dayTF1.sendKeys("10");
 		
 		
