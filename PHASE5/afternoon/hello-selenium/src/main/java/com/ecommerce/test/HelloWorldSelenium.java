@@ -17,7 +17,7 @@ public class HelloWorldSelenium {
 		
 		System.out.println("Title of webpage "+driver.getTitle());
 		
-		///
+		///Close the browser
 		Thread.sleep(1000);// 1 ms
 		driver.close();
 	}
