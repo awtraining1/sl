@@ -15,6 +15,8 @@ public class HelloWorldSelenium {
 		
 		driver.get(baseUrl);
 		
+		
+		
 		System.out.println("Title of webpage "+driver.getTitle());
 		
 		///Close the browser
