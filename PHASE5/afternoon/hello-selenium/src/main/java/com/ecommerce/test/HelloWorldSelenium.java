@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class HelloWorldSelenium {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		// Basic configuration
 		WebDriver driver = new ChromeDriver();
@@ -16,7 +16,10 @@ public class HelloWorldSelenium {
 		driver.get(baseUrl);
 		
 		System.out.println("Title of webpage "+driver.getTitle());
-
+		
+		///
+		Thread.sleep(1000);// 1 ms
+		driver.close();
 	}
 
 }
