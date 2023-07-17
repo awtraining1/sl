@@ -14,14 +14,21 @@ public class LocateElementsDemo {
 				
 				driver.get(baseUrl);
 				
-				WebElement firstNameTF = driver.findElement(By.id("firstName"));
+				// Locate the first name feild using id
+				WebElement firstNameTF = driver.findElement(By.id("firstName"));				
+				//System.out.println("firstname text feild details "+firstNameTF);				
+				firstNameTF.sendKeys("firname");
 				
-				//System.out.println("firstname text feild details "+firstNameTF);
+				// Locate the last name feild using name
+				WebElement lastNameTF = driver.findElement(By.name("lastName"));				
+				lastNameTF.sendKeys("lasname");
 				
-				firstNameTF.sendKeys("my first name is AK");
+				//Locate the button using class
+				WebElement nextButton = driver.findElement(By.className("VfPpkd-vQzf8d"));
+				nextButton.click();				
+				
 
-				Thread.sleep(5000);
-				
+				Thread.sleep(5000);				
 				driver.close();
 
 	}
