@@ -2,6 +2,7 @@ package com.ecommerce.test;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LocateElementsDemo {
@@ -25,10 +26,19 @@ public class LocateElementsDemo {
 				
 				//Locate the button using class
 				WebElement nextButton = driver.findElement(By.className("VfPpkd-vQzf8d"));
-				nextButton.click();				
+				nextButton.click();	
+				
+				// Locate by XPath
+				String xPathOfMonth = "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[2]/div/div/div[2]/select";
+				WebElement monthSelectElement = driver.findElement(By.xpath(xPathOfMonth));
+				System.out.println("monthSelectElement details "+monthSelectElement);	
+				
+				Select select = new Select(monthSelectElement);
+				select.selectByValue("6");
+				
 				
 
-				Thread.sleep(5000);				
+				Thread.sleep(15000);				
 				driver.close();
 
 	}
