@@ -24,6 +24,9 @@ List<WebElement> inputAdminElementsUsingCSSSelector = driver.findElements(By.css
 		
 		System.out.println("inputAdminElementsUsingCSSSelector has "+inputAdminElementsUsingCSSSelector.size());
 		
+		WebElement secondH3SiblingOfForm = driver.findElement(By.cssSelector("form ~ h3:nth-child(2)"));
+		System.out.println("secondH3SiblingOfForm text is " + secondH3SiblingOfForm.getText());
+		
 		//close the browser and quit.
 		//driver.close();
 	}
