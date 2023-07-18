@@ -14,14 +14,35 @@ public class AdvancedLocateElementsDemo {
 
 		// demoXPathCSSSelector(driver);
 		
-		demoElementAction(driver);
+		// demoElementActionForSelect(driver);
+		
+		demoElementActionForTable(driver);
 
 		// close the browser and quit.
 		// driver.close();
 	}
 
+	/* Table demo */
+	static void demoElementActionForTable(WebDriver driver) throws InterruptedException {
+		String baseUrl = "https://www.nyse.com/ipo-center/recent-ipo";
+		driver.get(baseUrl);
+		
+		String tableFullXpath = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table";
+		
+		Thread.sleep(5000);
+		
+		// /html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody
+		String tableRow = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody/tr";
+		
+		// Row count
+		List<WebElement> selectIPOTableRows = driver.findElements(By.xpath(tableRow));
+		
+		System.out.println("No of rows : " + selectIPOTableRows.size());
+				
+	}
+	
 	/* Select/Multi-select actions demo */
-	static void demoElementAction(WebDriver driver) {
+	static void demoElementActionForSelect(WebDriver driver) {
 		String baseUrl = "File:///F:\\Users\\HomeWk\\git\\sl\\PHASE5\\morning\\hello-selenium\\src\\main\\resources\\test.html";
 
 		driver.get(baseUrl);	
