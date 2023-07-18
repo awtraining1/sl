@@ -48,6 +48,8 @@ public class AdvancedLocatingElements {
 		// Store the alert in a variable
 		Alert alert = driver.switchTo().alert();
 		
+		Thread.sleep(10000);
+		
 		alert.accept();
 	}
 
