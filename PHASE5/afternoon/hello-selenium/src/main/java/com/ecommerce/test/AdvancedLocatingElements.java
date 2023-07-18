@@ -28,7 +28,16 @@ public class AdvancedLocatingElements {
 		
 		List<WebElement> inputAdminElements = driver.findElements(By.xpath("//input[contains(@id, 'admin')]"));
 
-		System.out.println("inputAdminElements has " + inputAdminElements.size());		
+		System.out.println("inputAdminElements has " + inputAdminElements.size());//3
+		
+		// Same as above but using CSS selectors
+		List<WebElement> inputAdminElementsUsingCSSSelectors = driver.findElements(By.cssSelector("input[id*='admin']"));
+		System.out.println("inputAdminElementsUsingCSSSelectors has " + inputAdminElementsUsingCSSSelectors.size());//3
+		
+		List<WebElement> inputAdminElementsUsingCSSSelectors2 = driver.findElements(By.cssSelector("input[id$='xyz']"));
+		System.out.println("input  whose ids end with xyz " + inputAdminElementsUsingCSSSelectors2.size()); //2
+		
+		
 		
 	}
 	
