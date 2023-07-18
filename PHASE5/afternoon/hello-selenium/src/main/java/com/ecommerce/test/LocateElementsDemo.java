@@ -36,7 +36,16 @@ public class LocateElementsDemo {
 		Select select = new Select(dayDropDown);
 		select.selectByVisibleText("11");
 		
-		// PROB
+		// TRY THIS - Locate the month and year
+		
+		// Locate the Gender and set it to M/F/C
+//		WebElement gender= driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[2]/input"));
+//		gender.click();
+		
+		//WebElement gender= driver.findElement(By.cssSelector("#u_0_5_eQ")); // NOT WORKING, because id are dynamically generated
+		WebElement gender= driver.findElement(By.cssSelector("span > span > input[type='radio'][value='1']"));
+		gender.click();
+		
 
 	}
 	
