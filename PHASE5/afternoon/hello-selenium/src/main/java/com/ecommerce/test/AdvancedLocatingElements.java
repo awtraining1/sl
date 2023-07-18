@@ -46,7 +46,9 @@ public class AdvancedLocatingElements {
 
 		driver.findElement(By.cssSelector("#docsearch > button > span.DocSearch-Button-Container > span")).click();
 		driver.findElement(By.cssSelector("#docsearch-input")).sendKeys("hello");
-
+		
+		//switch back to original webpage
+		driver.switchTo().defaultContent();
 	}
 
 	static void demoExternalElementsNewTab(WebDriver driver) throws InterruptedException {
