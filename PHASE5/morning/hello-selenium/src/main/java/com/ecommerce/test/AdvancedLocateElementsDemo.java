@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class AdvancedLocateElementsDemo {
 
@@ -12,17 +13,28 @@ public class AdvancedLocateElementsDemo {
 		WebDriver driver = new ChromeDriver(); // new FirefoxDriver();
 
 		// demoXPathCSSSelector(driver);
+		
+		demoElementAction(driver);
 
 		// close the browser and quit.
 		// driver.close();
 	}
 
+	/* Select/Multi-select actions demo */
 	static void demoElementAction(WebDriver driver) {
 		String baseUrl = "File:///F:\\Users\\HomeWk\\git\\sl\\PHASE5\\morning\\hello-selenium\\src\\main\\resources\\test.html";
 
-		driver.get(baseUrl);
+		driver.get(baseUrl);	
 		
+		WebElement selectMonthElement = driver.findElement(By.id("month"));
+		Select selectMonth = new Select(selectMonthElement);
 		
+		System.out.println("selectMonth is muti select " + selectMonth.isMultiple());
+		
+		selectMonth.selectByIndex(0);
+		selectMonth.selectByIndex(6);
+		
+		System.out.println("selectMonth selected options are " + selectMonth.getAllSelectedOptions());		
 	}
 
 	static void demoXPathCSSSelector(WebDriver driver) {
