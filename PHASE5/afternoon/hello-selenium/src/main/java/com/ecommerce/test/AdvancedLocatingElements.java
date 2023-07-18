@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class AdvancedLocatingElements {
 
@@ -39,6 +40,24 @@ public class AdvancedLocatingElements {
 		
 		WebElement h4SecondChildInsideDiv = driver.findElement(By.cssSelector("div[id='eCommerce'] h4:nth-child(2)"));
 		System.out.println("h4SecondChildInsideDiv text is " + h4SecondChildInsideDiv.getText()); // h4 second
+		
+		// Locate and Process multi select list
+		WebElement selectMonthElement = driver.findElement(By.id("month"));
+		Select selectMonth =  new Select(selectMonthElement);
+		
+		System.out.printf("\n selectMonth.isMultiple() = %s", selectMonth.isMultiple());
+		
+		
+		selectMonth.selectByIndex(0);
+		selectMonth.selectByIndex(3);
+		selectMonth.selectByIndex(6);
+		
+		List<WebElement>  allMonthsSelected = selectMonth.getAllSelectedOptions();
+		for(WebElement monthOption: allMonthsSelected) {
+			System.out.printf("\n option selected = %s", monthOption.getText());
+		}
+		
+		
 		
 	}
 	
