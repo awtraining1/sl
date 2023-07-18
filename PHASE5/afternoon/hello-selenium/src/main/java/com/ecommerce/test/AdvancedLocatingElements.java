@@ -2,9 +2,9 @@ package com.ecommerce.test;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -88,6 +88,12 @@ public class AdvancedLocatingElements {
 		WebElement cellAddress = driver.findElement(By.xpath(tableXPath + "/tbody/tr[4]/td[3]"));
 		String value = cellAddress.getText();
 		System.out.println("The Cell Value is : " + value);
+		
+		//Change the cell contents using JS
+		// JS Executor
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String cssSelectScriptForCell3_3 = "var e =document.querySelector(\"body > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(9) > table > tbody > tr:nth-child(3) > td:nth-child(3) > strong\"); e.textContent='Bharat Gas'";
+		js.executeScript(cssSelectScriptForCell3_3);
 	}
 
 }
