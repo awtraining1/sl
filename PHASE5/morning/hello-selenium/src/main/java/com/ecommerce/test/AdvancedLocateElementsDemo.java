@@ -34,7 +34,10 @@ public class AdvancedLocateElementsDemo {
 		selectMonth.selectByIndex(0);
 		selectMonth.selectByIndex(6);
 		
-		System.out.println("selectMonth selected options are " + selectMonth.getAllSelectedOptions());		
+		List<WebElement> optionsList = selectMonth.getAllSelectedOptions();
+		
+		for(WebElement option : optionsList)
+		System.out.println("selectMonth selected options are " + option.getText());		
 	}
 
 	static void demoXPathCSSSelector(WebDriver driver) {
