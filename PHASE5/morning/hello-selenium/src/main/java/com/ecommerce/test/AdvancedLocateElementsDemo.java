@@ -1,6 +1,7 @@
 package com.ecommerce.test;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,20 +26,34 @@ public class AdvancedLocateElementsDemo {
 	/* Table demo */
 	static void demoElementActionForTable(WebDriver driver) throws InterruptedException {
 		String baseUrl = "https://www.nyse.com/ipo-center/recent-ipo";
-		driver.get(baseUrl);
+		driver.get(baseUrl);		
 		
-		String tableFullXpath = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table";
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
-		Thread.sleep(5000);
-		
-		// /html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody
-		String tableRow = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody/tr";
+		String tableXPath  ="/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table";
+		String tableRowXPath = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody/tr";
 		
 		// Row count
-		List<WebElement> selectIPOTableRows = driver.findElements(By.xpath(tableRow));
+		List<WebElement> selectIPOTableRows = driver.findElements(By.xpath(tableRowXPath));
 		
 		System.out.println("No of rows : " + selectIPOTableRows.size());
-				
+		
+        String tableHeadColsXPath="/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/thead/tr/th";      
+        //Finding number of Columns
+        List<WebElement> columnsNumber = driver.findElements(By.xpath(tableHeadColsXPath));
+        int columnCount = columnsNumber.size();
+        System.out.println("No of columns in this table : " + columnCount);
+
+        //Finding cell value at 4th row and 3rd column
+        WebElement cellAddress = driver.findElement(By.xpath(tableXPath+"/tbody/tr[4]/td[3]"));
+        String value = cellAddress.getText();
+        System.out.println("The Cell Value is : " +value);	
+        
+        // JS Executor
+        JavascriptExecutor js = (JavascriptExecutor)driver;  
+        String elementTextChangeScript = "var e = document.querySelector(\"body > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(9) > table > tbody > tr:nth-child(3) > td:nth-child(3) > strong\"); e.textContent=\"Bharat Gas\";";
+        js.executeScript(elementTextChangeScript);
+        
 	}
 	
 	/* Select/Multi-select actions demo */
