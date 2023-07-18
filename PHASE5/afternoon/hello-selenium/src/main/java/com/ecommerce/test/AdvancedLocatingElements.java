@@ -13,7 +13,7 @@ public class AdvancedLocatingElements {
 		// Basic configuration
 				WebDriver driver = new ChromeDriver();
 				
-				demoAdvancedXPathCSSSelector(driver)
+				demoAdvancedXPathCSSSelector(driver);
 
 	}
 	
