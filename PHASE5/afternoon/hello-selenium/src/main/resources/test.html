@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Hello</title>
+<script>
+	function myDblClickFunction() {
+		document.getElementById("demo-messages").textContent = "You double clicked me!";
+		document.getElementById("demo-messages").style.color = "red";
+	}
+
+	function mySglClickFunction() {
+		document.getElementById("demo-messages").textContent = "You single clicked me!";
+		document.getElementById("demo-messages").style.color = "blue";
+	}
+</script>
+</head>
+<body bgcolor="#ffeeee">
+	DEMO-MESSAGES:
+	<span id="demo-messages">GETTING STARTED</span>
+
+	<p id="xyz">Hello world!</p>
+
+
+	Alerts The simplest of these is referred to as an alert, which shows a
+	custom message, and a single button which dismisses the alert, labelled
+	in most browsers as OK. It can also be dismissed in most browsers by
+	pressing the close button, but this will always do the same thing as
+	the OK button.
+	<a href="javascript:alert('hello alerts!')">See an example alert</a>
+
+	<br>
+	<br>
+	<div id="modal">
+		<iframe id="myframe" name="myframe"
+			src="https://seleniumhq.github.io" width=1200 height=600>
+		</iframe>
+	</div>
+
+	<br>
+	<br>
+
+	<button id="dblButton" ondblclick="myDblClickFunction()"
+		onclick="mySglClickFunction()">Double-click me</button>
+
+	<h3>0 Some h3 text</h3>
+	<form>
+		<input type="text" id="admin"> <br> <input type="text"
+			id="admin123"> <br> <input type="text" id="adminxyz">
+		<br> <input type="text" id="adm"> <br>
+
+	</form>
+	<h3>1 Some h3 text</h3>
+	<h3>2 Some h3 text</h3>
+	<h3>3 Some h3 text</h3>
+
+	<select multiple aria-label="Month" name="birthday_month" id="month"
+		title="Month" class="_9407 _5dba _9hk6 _8esg">
+		<option
+			value="1">Jan</option>
+		<option value="2">Feb</option>
+		<option value="3">Mar</option>
+		<option value="4">Apr</option>
+		<option value="5">May</option>
+		<option value="6">Jun</option>
+		<option value="7" selected="1">Jul</option>
+		<option value="8">Aug</option>
+		<option value="9">Sep</option>
+		<option value="10">Oct</option>
+		<option value="11">Nov</option>
+		<option value="12">Dec</option>
+		</select>
+
+
+</body>
+</html>
