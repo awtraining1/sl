@@ -44,7 +44,15 @@ public class LocateElementsDemo {
 		
 		//WebElement gender= driver.findElement(By.cssSelector("#u_0_5_eQ")); // NOT WORKING, because id are dynamically generated
 		WebElement gender= driver.findElement(By.cssSelector("span > span > input[type='radio'][value='1']"));
-		gender.click();
+		gender.click(); // selects Female
+		
+		//Locating image by its tag names
+		WebElement fbLogoImage = driver.findElement(By.tagName("img"));
+		System.out.println("FB Logo src is "+fbLogoImage.getAttribute("src"));
+		
+		//Locate a link and click it.
+		WebElement fbAlreadyLink = driver.findElement(By.linkText("Already have an account?"));
+		fbAlreadyLink.click();
 		
 
 	}
