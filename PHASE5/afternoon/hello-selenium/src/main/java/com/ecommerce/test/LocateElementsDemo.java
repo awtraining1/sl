@@ -6,11 +6,36 @@ import org.openqa.selenium.support.ui.Select;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LocateElementsDemo {
-
+	
 	public static void main(String[] args) throws InterruptedException {
 		// Basic configuration
 				WebDriver driver = new ChromeDriver();
 				
+				// Demo for locating TextFeild, Button, Select
+				// using id, name and className, xpath
+				googleAccCreation(driver);
+	}
+
+	public static void facebookAccCreation(WebDriver driver) throws InterruptedException {
+		String baseUrl = "https://www.facebook.com/r.php?locale=en_GB&display=page";
+		
+		driver.get(baseUrl);
+		
+		//The Day Dropdown
+		//*[@id="day"]
+		///html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[5]/div[2]/span/span/select[1]
+		
+		String fullXPathOfDayDropDown = 
+				"/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[5]/div[2]/span/span/select[1]";
+		WebElement dayDropDown = driver.findElement(By.xpath(fullXPathOfDayDropDown));
+		
+		Select select = new Select(dayDropDown);
+		select.selectByVisibleText("11");
+
+	}
+	
+	public static void googleAccCreation(WebDriver driver) throws InterruptedException {
+						
 				String baseUrl = "https://accounts.google.com/signup/v2/createaccount?flowEntry=SignUp";
 				
 				driver.get(baseUrl);
@@ -34,8 +59,7 @@ public class LocateElementsDemo {
 				System.out.println("monthSelectElement details "+monthSelectElement);	
 				
 				Select select = new Select(monthSelectElement);
-				select.selectByValue("6");
-				
+				select.selectByValue("6");	
 				
 
 				Thread.sleep(15000);				
