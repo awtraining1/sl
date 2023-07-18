@@ -13,7 +13,9 @@ public class LocateElementsDemo {
 				
 				// Demo for locating TextFeild, Button, Select
 				// using id, name and className, xpath
-				googleAccCreation(driver);
+				// googleAccCreation(driver);
+				
+				facebookAccCreation(driver);
 	}
 
 	public static void facebookAccCreation(WebDriver driver) throws InterruptedException {
