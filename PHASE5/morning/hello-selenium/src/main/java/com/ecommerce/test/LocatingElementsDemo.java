@@ -29,10 +29,19 @@ public class LocatingElementsDemo {
 		driver.get(baseUrl);
 		
 		String cssDay = "#day";
-		WebElement cssDaySelect = driver.findElement(By.cssSelector(cssDay));
-		Select daySelect =  new Select(cssDaySelect);
-		daySelect.selectByVisibleText("11");		
+		WebElement cssDaySelect = driver.findElement(By.cssSelector(cssDay));	
 		
+		
+		Select daySelect =  new Select(cssDaySelect);
+		daySelect.selectByVisibleText("11");
+		
+		// PROBLEM : locate the gender element and try setting it F/M/C
+//		String cssGender = "#u_0_4_nJ";
+//		WebElement cssGenderRadio = driver.findElement(By.cssSelector(cssGender));
+//		cssGenderRadio.click();
+		
+		WebElement cssGenderRadio = driver.findElement(By.cssSelector("span > span > input[type='radio'][value='2']" ));
+		cssGenderRadio.click();
 	}
 		
 	
