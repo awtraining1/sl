@@ -29,6 +29,10 @@ public class DemoMouseActions {
 		
 		Actions actions = new Actions(driver);
 		actions.doubleClick(button).perform();
+		
+		Thread.sleep(10000);
+		WebElement helloPara = driver.findElement(By.id("xyz"));
+		actions.contextClick(helloPara).perform();
 	}
 
 }
