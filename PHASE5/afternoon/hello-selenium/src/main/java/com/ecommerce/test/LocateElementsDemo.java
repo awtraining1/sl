@@ -15,9 +15,11 @@ public class LocateElementsDemo {
 				// using id, name and className, xpath
 				// googleAccCreation(driver);
 				
+				/* Demo locating Select and Radio Elements*/
 				facebookAccCreation(driver);
 	}
 
+	/* Automate Select and Radio Elements*/
 	public static void facebookAccCreation(WebDriver driver) throws InterruptedException {
 		String baseUrl = "https://www.facebook.com/r.php?locale=en_GB&display=page";
 		
@@ -33,6 +35,8 @@ public class LocateElementsDemo {
 		
 		Select select = new Select(dayDropDown);
 		select.selectByVisibleText("11");
+		
+		// PROB
 
 	}
 	
