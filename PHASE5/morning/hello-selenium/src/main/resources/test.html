@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Hello</title>
+<script>
+	function myDblClickFunction() {
+		document.getElementById("demo-messages").textContent = "You double clicked me!";
+		document.getElementById("demo-messages").style.color = "red";		
+	}
+	
+	function mySglClickFunction() {
+		document.getElementById("demo-messages").textContent = "You single clicked me!";
+		document.getElementById("demo-messages").style.color = "blue";		
+	}
+</script>
+</head>
+<body bgcolor="#ffeeee">
+	DEMO-MESSAGES: <span id="demo-messages">GETTING STARTED</span>
+	<p id="xyz">Hello world!</p>
+
+
+	Alerts The simplest of these is referred to as an alert, which shows a
+	custom message, and a single button which dismisses the alert, labelled
+	in most browsers as OK. It can also be dismissed in most browsers by
+	pressing the close button, but this will always do the same thing as
+	the OK button.
+	<a href="javascript:alert('hello alerts!')">See an example alert</a>
+
+	<br>
+	<br>
+	<div id="modal">
+		<iframe id="buttonframe" name="myframe"
+			src="https://seleniumhq.github.io" width=1200 width=400>
+			<button>Click here</button>
+		</iframe>
+	</div>
+
+	<br>
+	<br>
+
+	<button id="dblButton" ondblclick="myDblClickFunction()" onclick="mySglClickFunction()">Double-click
+		me</button>
+
+
+</body>
+</html>

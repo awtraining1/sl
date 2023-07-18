@@ -1,5 +1,7 @@
 package com.ecommerce.test;
 
+import java.util.List;
+
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,6 +44,16 @@ public class LocatingElementsDemo {
 		
 		WebElement cssGenderRadio = driver.findElement(By.cssSelector("span > span > input[type='radio'][value='2']" ));
 		cssGenderRadio.click();
+		
+		// Demo find by tag name
+		List<WebElement> titleTagElement = driver.findElements(By.tagName("title"));
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver; 
+		js.executeScript("console.log(arguments[0].innerText)", titleTagElement);
+		
+		
+		System.out.println("WebPage Title is "+titleTagElement.get(0).getText());
+		
 	}
 		
 	
