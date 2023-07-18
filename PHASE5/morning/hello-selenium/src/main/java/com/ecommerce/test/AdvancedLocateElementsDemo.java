@@ -26,10 +26,25 @@ public class AdvancedLocateElementsDemo {
 
 		// demoElementActionForTable(driver);
 
-		demoAlert(driver);
+		//demoAlert(driver);
+		
+		demoIFrameActions(driver);
 
 		// close the browser and quit.
 		// driver.close();
+	}
+
+	/* IFrame actions demo */
+	static void demoIFrameActions(WebDriver driver) throws InterruptedException {
+		String baseUrl = "File:///F:\\Users\\HomeWk\\git\\sl\\PHASE5\\morning\\hello-selenium\\src\\main\\resources\\test.html";
+
+		driver.get(baseUrl);
+
+		driver.switchTo().frame("myframe");
+
+		// Now we can click the button
+		driver.findElement(By.cssSelector(".DocSearch-Button-Placeholder")).click();
+		driver.findElement(By.cssSelector("#docsearch-input")).sendKeys("hello");
 	}
 
 	/* Alert actions demo */
@@ -37,13 +52,13 @@ public class AdvancedLocateElementsDemo {
 		String baseUrl = "File:///F:\\Users\\HomeWk\\git\\sl\\PHASE5\\morning\\hello-selenium\\src\\main\\resources\\test.html";
 
 		driver.get(baseUrl);
-		
-		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+		// driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		Thread.sleep(10000);
 
 		// Click the link to activate the alert
 		driver.findElement(By.linkText("See an example alert")).click();
-		
+
 		Thread.sleep(10000);
 
 		// alert will appear now, may be in 10 secs
@@ -58,7 +73,7 @@ public class AdvancedLocateElementsDemo {
 		// Store the alert in a variable for reuse
 		String text = alert.getText();
 		System.out.println(text);
-		
+
 		// Press the Cancel button
 		alert.accept();
 	}
