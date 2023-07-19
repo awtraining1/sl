@@ -63,6 +63,7 @@ public class ActionsDemo {
 		Actions actions4 = new Actions(driver);
 		Action action4 = actions4
 						.clickAndHold(textHelloWorldElement)
+						.pause(Duration.ofSeconds(10))
 						.dragAndDrop(textHelloWorldElement, buttonElement)
 						.build();
 		action4.perform();
