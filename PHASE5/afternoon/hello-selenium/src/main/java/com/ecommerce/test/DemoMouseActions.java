@@ -3,6 +3,7 @@ package com.ecommerce.test;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +26,7 @@ public class DemoMouseActions {
 		driver.get(baseUrl);
 
 		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		
 		WebElement button = driver.findElement(By.id("dblButton"));
 		
@@ -33,19 +34,36 @@ public class DemoMouseActions {
 		Actions actions = new Actions(driver);
 		actions.doubleClick(button).perform();
 		
-		Thread.sleep(10000);
+		Thread.sleep(7000);
 		
 		//We can execute  many actions together.
 		Thread.sleep(5000);
 		WebElement helloPara = driver.findElement(By.id("xyz"));
 		Actions multiActions = new Actions(driver);
 		
-		Action action = multiActions
+//		Action action = multiActions
+//		.doubleClick(helloPara)
+//		.contextClick(helloPara)
+//		.pause(5000)
+//		.click(helloPara)
+//		.build();
+//		
+//		action.perform();
+		
+		//PROBLEM
+		Actions multiActions2 = new Actions(driver);
+		Action action2 = multiActions2
+		.moveToElement(button)
+		.click(button)
+		.pause(1000)
+		.moveToElement(helloPara)
+		.pause(2000)
 		.doubleClick(helloPara)
-		.contextClick(helloPara)
+		.release()
 		.build();
 		
-		action.perform();
+		action2.perform();
+		
 		
 		
 	}
