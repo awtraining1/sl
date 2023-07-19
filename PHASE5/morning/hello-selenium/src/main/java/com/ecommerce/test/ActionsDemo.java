@@ -1,6 +1,9 @@
 package com.ecommerce.test;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,15 +34,28 @@ public class ActionsDemo {
 		Thread.sleep(10000);
 		
 		//Double click on the text Hello World
+		// Example of build 2 or more actions and them performing all of them together.
 		WebElement textHelloWorldElement = driver.findElement(By.id("xyz"));
 		Actions actions2 = new Actions(driver);
 		
 		Action action = actions2
 		.doubleClick(textHelloWorldElement)
 		.contextClick(textHelloWorldElement)
+		.pause(Duration.ofSeconds(10))
+		.release()
 		.build();
 		
-		action.perform();	
+		action.perform();
+		
+		Thread.sleep(10000);
+		
+		// Scroll actions
+		Actions actions3 = new Actions(driver);
+		Action action3 = actions3
+				.sendKeys(Keys.PAGE_DOWN)  // scroll one page
+				.sendKeys(Keys.PAGE_DOWN)  // scroll another one page
+				.build();
+		action3.perform();
 		
 	}
 
