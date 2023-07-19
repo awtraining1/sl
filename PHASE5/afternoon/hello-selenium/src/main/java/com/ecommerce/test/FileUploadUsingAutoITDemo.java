@@ -28,6 +28,7 @@ public class FileUploadUsingAutoITDemo {
 		Thread.sleep(2000);
 
 		WebElement uploadFileElememt = driver.findElement(By.id("uploadPicture"));
+		uploadFileElememt.click();
 
 		System.out.println("uploadFileElememt details " + uploadFileElememt);
 
