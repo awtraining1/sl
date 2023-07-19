@@ -50,7 +50,7 @@ public class DemoMouseActions {
 //		
 //		action.perform();
 		
-		//PROBLEM
+		//multi action 
 		Actions multiActions2 = new Actions(driver);
 		Action action2 = multiActions2
 		.moveToElement(button)
@@ -64,7 +64,16 @@ public class DemoMouseActions {
 		
 		action2.perform();
 		
-		
+		// scroll demo
+		Thread.sleep(2000);
+		Actions scrollPageActions = new Actions(driver);
+		scrollPageActions
+		.sendKeys(Keys.PAGE_DOWN)
+		.sendKeys(Keys.PAGE_DOWN)
+		.pause(5000)
+		.sendKeys(Keys.PAGE_UP)
+		.build()
+		.perform();
 		
 	}
 	
