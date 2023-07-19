@@ -27,11 +27,11 @@ public class ActionsDemo {
 		
 		Actions actions = new Actions(driver);
 		
-		Thread.sleep(10000);// Remove this once we have tested this automation.
+		Thread.sleep(5000);// Remove this once we have tested this automation.
 		
 		actions.doubleClick(buttonElement).perform();
 		
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		
 		//Double click on the text Hello World
 		// Example of build 2 or more actions and them performing all of them together.
@@ -42,12 +42,12 @@ public class ActionsDemo {
 		.doubleClick(textHelloWorldElement)
 		.contextClick(textHelloWorldElement)
 		.pause(Duration.ofSeconds(10))
-		.release()
+		.click(textHelloWorldElement)
 		.build();
 		
 		action.perform();
 		
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		
 		// Scroll actions
 		Actions actions3 = new Actions(driver);
@@ -56,6 +56,16 @@ public class ActionsDemo {
 				.sendKeys(Keys.PAGE_DOWN)  // scroll another one page
 				.build();
 		action3.perform();
+		
+		Thread.sleep(5000);
+		
+		// Drag and Drop
+		Actions actions4 = new Actions(driver);
+		Action action4 = actions4
+						.clickAndHold(textHelloWorldElement)
+						.dragAndDrop(textHelloWorldElement, buttonElement)
+						.build();
+		action4.perform();
 		
 	}
 
