@@ -45,6 +45,9 @@ public class AdvancedLocateElementsDemo {
 		// Now we can click the button
 		driver.findElement(By.cssSelector(".DocSearch-Button-Placeholder")).click();
 		driver.findElement(By.cssSelector("#docsearch-input")).sendKeys("hello");
+		
+		driver.switchTo().defaultContent();
+		
 	}
 
 	/* Alert actions demo */
