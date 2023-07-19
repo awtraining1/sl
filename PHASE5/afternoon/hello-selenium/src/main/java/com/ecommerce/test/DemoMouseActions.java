@@ -1,14 +1,17 @@
 package com.ecommerce.test;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
 public class DemoMouseActions {
 	
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		// Basic configuration
 		WebDriver driver = new ChromeDriver();
 		
@@ -31,8 +34,21 @@ public class DemoMouseActions {
 		actions.doubleClick(button).perform();
 		
 		Thread.sleep(10000);
+		
+		//We can execute  many actions together.
+		Thread.sleep(5000);
 		WebElement helloPara = driver.findElement(By.id("xyz"));
-		actions.contextClick(helloPara).perform();
+		Actions multiActions = new Actions(driver);
+		
+		Action action = multiActions
+		.doubleClick(helloPara)
+		.contextClick(helloPara)
+		.build();
+		
+		action.perform();
+		
+		
 	}
+	
 
 }
