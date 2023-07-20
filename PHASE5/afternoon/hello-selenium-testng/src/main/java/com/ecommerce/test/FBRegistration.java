@@ -22,7 +22,7 @@ public class FBRegistration {
 	public WebDriver driver;
 	public String baseUrl = "file:///F:/Users/HomeWk/git/sl/PHASE5/morning/hello-selenium/src/main/resources/test.html";
 	
-	@Test()
+	@Test(groups= {"Google"})
 	public void searchGoogle() {
 		System.out.printf("Inside %s and thread-id is %s \n","searchGoogle", Thread.currentThread().getId()  );
 		
@@ -31,7 +31,7 @@ public class FBRegistration {
 		System.out.println("Title of google page is " +  driver.getTitle());
 	}
 	
-	@Test()
+	@Test(groups= {"Account Creation"})
 	public void fbAccount() {
 		System.out.printf("Inside %s and thread-id is %s \n","fbAccount", Thread.currentThread().getId()  );
 		
@@ -51,7 +51,7 @@ public class FBRegistration {
 		System.out.println("Gender is enabled = " + cssGenderRadio.isSelected());		
 	}
 	
-	@Test()
+	@Test(groups= {"Account Creation", "Google"})
 	public void googleAccount() {
 		System.out.printf("Inside %s and thread-id is %s \n","googleAccount", Thread.currentThread().getId()  );
 				
@@ -72,7 +72,7 @@ public class FBRegistration {
 	}
 	
 	
-	@Test()
+	@Test(groups= {"Dummy"}, dependsOnGroups = {"Account Creation"})
 	public void f1() {
 		System.out.printf("Inside %s and thread-id is %s \n","f1", Thread.currentThread().getId()  );
 	}
