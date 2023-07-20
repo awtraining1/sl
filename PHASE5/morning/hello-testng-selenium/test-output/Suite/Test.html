@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>5/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 20 11:32:33 IST 2023</td>
+<td>Started on:</td><td>Thu Jul 20 11:46:45 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>45 seconds (45809 ms)</td>
+<tr><td>Total time:</td><td>41 seconds (41580 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,16 +77,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.ecomerce.test.ParalellTest.facebookAccCreation()'><b>facebookAccCreation</b><br>Test class: com.ecomerce.test.ParalellTest</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#day&quot;}
   (Session info: chrome=114.0.5735.199)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3c721b76f3875aed2206057ce49d5df8, getElementTagName {id=01CA8A143248B6CFF3FA7F5F408FEF43_element_5}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HomeWk\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:52204}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52204/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (3c721b76f3875aed2206057ce49d5df8)] -&gt; css selector: #day]
-Session ID: 3c721b76f3875aed2206057ce49d5df8
+Command: [c66905825a0676a398fd8f89928ad5f9, findElement {using=css selector, value=#day}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HomeWk\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53882}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53882/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c66905825a0676a398fd8f89928ad5f9
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
@@ -94,24 +93,24 @@ Session ID: 3c721b76f3875aed2206057ce49d5df8
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-	at org.openqa.selenium.remote.RemoteWebElement.getTagName(RemoteWebElement.java:135)
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:43)
-	at com.ecomerce.test.ParalellTest.facebookAccCreation(ParalellTest.java:29)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.ecomerce.test.ParalellTest.facebookAccCreation(ParalellTest.java:30)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 13 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace606174529", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace606174529'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+... Removed 13 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1513126075", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1513126075'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#day&quot;}
   (Session info: chrome=114.0.5735.199)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3c721b76f3875aed2206057ce49d5df8, getElementTagName {id=01CA8A143248B6CFF3FA7F5F408FEF43_element_5}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HomeWk\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:52204}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52204/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (3c721b76f3875aed2206057ce49d5df8)] -&gt; css selector: #day]
-Session ID: 3c721b76f3875aed2206057ce49d5df8
+Command: [c66905825a0676a398fd8f89928ad5f9, findElement {using=css selector, value=#day}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HomeWk\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53882}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53882/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c66905825a0676a398fd8f89928ad5f9
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -122,10 +121,11 @@ Session ID: 3c721b76f3875aed2206057ce49d5df8
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-	at org.openqa.selenium.remote.RemoteWebElement.getTagName(RemoteWebElement.java:135)
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:43)
-	at com.ecomerce.test.ParalellTest.facebookAccCreation(ParalellTest.java:29)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.ecomerce.test.ParalellTest.facebookAccCreation(ParalellTest.java:30)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -140,8 +140,8 @@ Session ID: 3c721b76f3875aed2206057ce49d5df8
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>19</td>
-<td>com.ecomerce.test.ParalellTest@5656be13</td></tr>
+<td>11</td>
+<td>com.ecomerce.test.ParalellTest@65fb9ffc</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -152,30 +152,30 @@ Session ID: 3c721b76f3875aed2206057ce49d5df8
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ecomerce.test.ParalellTest.googleAccCreation()'><b>googleAccCreation</b><br>Test class: com.ecomerce.test.ParalellTest<br>Parameters: fname2, lname2</td>
+<td title='com.ecomerce.test.ParalellTest.googleAccCreation()'><b>googleAccCreation</b><br>Test class: com.ecomerce.test.ParalellTest<br>Parameters: fname1, lname1</td>
 <td></td>
-<td>6</td>
-<td>com.ecomerce.test.ParalellTest@5656be13</td></tr>
-<tr>
-<td title='com.ecomerce.test.ParalellTest.f2()'><b>f2</b><br>Test class: com.ecomerce.test.ParalellTest</td>
-<td></td>
-<td>0</td>
-<td>com.ecomerce.test.ParalellTest@5656be13</td></tr>
+<td>10</td>
+<td>com.ecomerce.test.ParalellTest@65fb9ffc</td></tr>
 <tr>
 <td title='com.ecomerce.test.ParalellTest.f1()'><b>f1</b><br>Test class: com.ecomerce.test.ParalellTest</td>
 <td></td>
 <td>0</td>
-<td>com.ecomerce.test.ParalellTest@5656be13</td></tr>
-<tr>
-<td title='com.ecomerce.test.ParalellTest.googleAccCreation()'><b>googleAccCreation</b><br>Test class: com.ecomerce.test.ParalellTest<br>Parameters: fname1, lname1</td>
-<td></td>
-<td>12</td>
-<td>com.ecomerce.test.ParalellTest@5656be13</td></tr>
+<td>com.ecomerce.test.ParalellTest@65fb9ffc</td></tr>
 <tr>
 <td title='com.ecomerce.test.ParalellTest.googleWebsiteTitle()'><b>googleWebsiteTitle</b><br>Test class: com.ecomerce.test.ParalellTest</td>
 <td></td>
 <td>11</td>
-<td>com.ecomerce.test.ParalellTest@5656be13</td></tr>
+<td>com.ecomerce.test.ParalellTest@65fb9ffc</td></tr>
+<tr>
+<td title='com.ecomerce.test.ParalellTest.f2()'><b>f2</b><br>Test class: com.ecomerce.test.ParalellTest</td>
+<td></td>
+<td>0</td>
+<td>com.ecomerce.test.ParalellTest@65fb9ffc</td></tr>
+<tr>
+<td title='com.ecomerce.test.ParalellTest.googleAccCreation()'><b>googleAccCreation</b><br>Test class: com.ecomerce.test.ParalellTest<br>Parameters: fname2, lname2</td>
+<td></td>
+<td>6</td>
+<td>com.ecomerce.test.ParalellTest@65fb9ffc</td></tr>
 </table><p>
 </body>
 </html>
