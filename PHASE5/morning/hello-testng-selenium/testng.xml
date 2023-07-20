@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.ecommerce.test.FBRegistration"/>
+       <class name="com.ecomerce.test.ParalellTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test> <!-- Test -->   
 </suite> <!-- Suite -->

@@ -22,7 +22,7 @@ public class FBRegistration {
 	public WebDriver driver;
 	public String baseUrl = "file:///F:/Users/HomeWk/git/sl/PHASE5/morning/hello-selenium/src/main/resources/test.html";
 	
-	@Test(dataProvider = "dp")
+	@Test()
 	public void searchGoogle() {
 		
 		driver.get(baseUrl);
@@ -72,7 +72,9 @@ public class FBRegistration {
 
 	@BeforeSuite
 	public void beforeSuite() {
-		driver = new ChromeDriver();		
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\HomeWk\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
+		driver = new ChromeDriver();
 	}
 
 	@AfterSuite
