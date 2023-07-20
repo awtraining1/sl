@@ -17,19 +17,27 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 @Test(groups = "Class1")
 public class FBRegistration {
 	public WebDriver driver;
 	public String baseUrl = "file:///F:/Users/HomeWk/git/sl/PHASE5/morning/hello-selenium/src/main/resources/test.html";
 
+	SoftAssert softAssert =  new SoftAssert();
+	
 	@Test(groups = { "Google" })
-	public void searchGoogle() {
+	public void searchGoogleAndTestTitleText() {
 		System.out.printf("Inside %s and thread-id is %s \n", "searchGoogle", Thread.currentThread().getId());
 
 		driver.get("http://www.google.com");
 
 		System.out.println("Title of google page is " + driver.getTitle());
+		
+		softAssert.assertEquals(driver.getTitle(), "Google");
+		
+
+		softAssert.assertAll("Google title did not match");		
 	}
 
 	@Test(groups = { "Account Creation" })
@@ -42,14 +50,23 @@ public class FBRegistration {
 
 		String cssDay = "#day";
 		WebElement cssDaySelect = driver.findElement(By.cssSelector(cssDay));
+		
+		softAssert.assertNotNull(cssDaySelect);
 
 		Select daySelect = new Select(cssDaySelect);
 		daySelect.selectByVisibleText("11");
 
 		WebElement cssGenderRadio = driver.findElement(By.cssSelector("span > span > input[type='radio'][value='2']"));
+		
+		softAssert.assertNotNull(cssGenderRadio);
+		
 		cssGenderRadio.click();
 
 		System.out.println("Gender is enabled = " + cssGenderRadio.isSelected());
+		
+		softAssert.assertTrue(cssGenderRadio.isSelected());
+		
+		softAssert.assertAll("Either Day or Gender element was not located OR gender selection failed");
 	}
 
 	@Test(groups = { "Account Creation", "Google" }, dataProvider = "googleNewUserData")
@@ -77,7 +94,7 @@ public class FBRegistration {
 		System.out.printf("Inside %s and thread-id is %s \n", "f1", Thread.currentThread().getId());
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = false, dependsOnMethods = {"testLocalPage"})
 	public void f2() {
 		System.out.printf("Inside %s and thread-id is %s \n", "f2", Thread.currentThread().getId());
 	}
