@@ -24,6 +24,66 @@ public class FBRegistration {
 	
 	@Test()
 	public void searchGoogle() {
+		System.out.printf("Inside %s and thread-id is %s","searchGoogle", Thread.currentThread().getId()  );
+		
+		driver.get("http://www.google.com");
+		
+		System.out.println("Title of google page is " +  driver.getTitle());
+	}
+	
+	@Test()
+	public void fbAccount() {
+		System.out.printf("Inside %s and thread-id is %s","fbAccount", Thread.currentThread().getId()  );
+		
+		String baseUrl = "https://www.facebook.com/r.php?locale=en_GB&display=page";
+
+		driver.get(baseUrl);
+
+		String cssDay = "#day";
+		WebElement cssDaySelect = driver.findElement(By.cssSelector(cssDay));
+		
+		Select daySelect = new Select(cssDaySelect);
+		daySelect.selectByVisibleText("11");
+
+		WebElement cssGenderRadio = driver.findElement(By.cssSelector("span > span > input[type='radio'][value='2']"));
+		cssGenderRadio.click();
+		
+		System.out.println("Gender is enabled = " + cssGenderRadio.isSelected());		
+	}
+	
+	@Test()
+	public void googleAccount() {
+		System.out.printf("Inside %s and thread-id is %s","googleAccount", Thread.currentThread().getId()  );
+				
+		String baseUrl = "https://accounts.google.com/signup/v2?biz=true&flowEntry=SignUp";
+		driver.get(baseUrl);
+
+		// Let's locate the first name text field by its id.
+		WebElement firstNameTF = driver.findElement(By.id("firstName"));
+		firstNameTF.sendKeys("Myname");
+
+		// Let's locate the surname name text field by its name.
+		WebElement surNameTF = driver.findElement(By.name("lastName"));
+		surNameTF.sendKeys("latName");
+
+		// The Next button using its class
+		WebElement nextButton = driver.findElement(By.className("VfPpkd-vQzf8d"));
+		System.out.println("Text on the button is " + nextButton.getText());
+	}
+	
+	
+	@Test()
+	public void f1() {
+		System.out.printf("Inside %s and thread-id is %s","f1", Thread.currentThread().getId()  );
+	}
+	@Test()
+	public void f2() {
+		System.out.printf("Inside %s and thread-id is %s","f2", Thread.currentThread().getId()  );
+	}
+	
+	@Test()
+	public void testLocalPage() {
+		System.out.printf("Inside %s and thread-id is %s","testLocalPage", Thread.currentThread().getId()  );
 		
 		driver.get(baseUrl);
 		
@@ -43,10 +103,12 @@ public class FBRegistration {
 
 	@BeforeMethod
 	public void beforeMethod() {
+		System.out.printf("Inside %s and thread-id is %s","beforeMethod", Thread.currentThread().getId()  );
 	}
 
 	@AfterMethod
 	public void afterMethod() {
+		System.out.printf("Inside %s and thread-id is %s","afterMethod", Thread.currentThread().getId()  );
 	}
 
 	@DataProvider
@@ -56,29 +118,35 @@ public class FBRegistration {
 
 	@BeforeClass
 	public void beforeClass() {
+		System.out.printf("Inside %s and thread-id is %s","beforeClass", Thread.currentThread().getId()  );
 	}
 
 	@AfterClass
 	public void afterClass() {
+		System.out.printf("Inside %s and thread-id is %s","afterClass", Thread.currentThread().getId()  );
 	}
 
 	@BeforeTest
 	public void beforeTest() {
+		System.out.printf("Inside %s and thread-id is %s","beforeTest", Thread.currentThread().getId()  );
 	}
 
 	@AfterTest
 	public void afterTest() {
+		System.out.printf("Inside %s and thread-id is %s","afterTest", Thread.currentThread().getId()  );
 	}
 
 	@BeforeSuite
 	public void beforeSuite() {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\HomeWk\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.out.printf("Inside %s and thread-id is %s","beforeSuite", Thread.currentThread().getId()  );
+		//System.setProperty("webdriver.chrome.driver","C:\\Users\\HomeWk\\Downloads\\chromedriver_win32\\chromedriver.exe");
 
 		driver = new ChromeDriver();
 	}
 
 	@AfterSuite
 	public void afterSuite() {
+		System.out.printf("Inside %s and thread-id is %s","afterSuite", Thread.currentThread().getId()  );
 		driver.quit();
 	}
 

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
+  <test thread-count="5" name="Test FaceBook">
     <classes>
       <class name="com.ecommerce.test.FBRegistration"/>
     </classes>
   </test> <!-- Test -->
+  
+  <!-- Test
+  <test thread-count="5" name="Test Google">
+    <classes>
+      <class name="com.ecommerce.test.GoogleRegistration"/>
+    </classes>
+  </test>  
+  -->
+  
 </suite> <!-- Suite -->
