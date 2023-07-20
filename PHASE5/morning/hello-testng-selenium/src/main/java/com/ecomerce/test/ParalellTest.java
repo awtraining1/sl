@@ -17,7 +17,7 @@ public class ParalellTest {
 	@Test(groups = {"Account Creation"})
 	public void facebookAccCreation() {
 		System.out.println("Inside facebookAccCreation");
-		System.out.println(Thread.currentThread().getId());
+		System.out.println("Thread ID " +Thread.currentThread().getId());
 
 		String baseUrl = "https://www.facebook.com/r.php?locale=en_GB&display=page";
 
@@ -40,7 +40,7 @@ public class ParalellTest {
 	dataProvider = "googleUserData")
 	public void googleAccCreation(String fName, String lName) {
 		System.out.println("Inside googleAccCreation");
-		System.out.println(Thread.currentThread().getId());
+		System.out.println("Thread ID " +Thread.currentThread().getId());
 
 		String baseUrl = "https://accounts.google.com/signup/v2?biz=true&flowEntry=SignUp";
 		driver.get(baseUrl);
@@ -63,7 +63,7 @@ public class ParalellTest {
 	@Test(groups = "Launch")
 	public void googleWebsiteTitle() {
 		System.out.println("Inside googleWebsiteTitle");
-		System.out.println(Thread.currentThread().getId());
+		System.out.println("Thread ID " +Thread.currentThread().getId());
 
 		String baseUrl = "https://www.google.com";
 		driver.get(baseUrl);
@@ -73,14 +73,12 @@ public class ParalellTest {
 	
 	@Test
 	public void f1() {
-		System.out.println("Inside f1");
-		System.out.println(Thread.currentThread().getId());
+		System.out.println("Inside f1 in Thread ID " +Thread.currentThread().getId());
 	}
 	
 	@Test
 	public void f2() {
-		System.out.println("Inside f2");
-		System.out.println(Thread.currentThread().getId());
+		System.out.println("Inside f2 in Thread ID " +Thread.currentThread().getId());
 	}
 	
 	@DataProvider(name = "googleUserData")
