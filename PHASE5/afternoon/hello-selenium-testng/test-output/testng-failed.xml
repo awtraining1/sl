@@ -6,13 +6,15 @@
       <class name="com.ecommerce.test.FBRegistration">
         <methods>
           <include name="beforeClass"/>
+          <include name="googleAccount" invocation-numbers="0"/>
           <include name="afterTest"/>
           <include name="fbAccount"/>
           <include name="beforeMethod"/>
+          <include name="searchGoogleAndTestTitleText"/>
           <include name="beforeSuite"/>
           <include name="afterClass"/>
-          <include name="testLocalPage"/>
           <include name="afterSuite"/>
+          <include name="testLocalPage"/>
           <include name="afterMethod"/>
           <include name="beforeTest"/>
           <include name="f1"/>
