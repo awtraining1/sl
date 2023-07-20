@@ -1,15 +1,13 @@
 package com.ecomerce.test;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ParalellTest {
@@ -37,8 +35,9 @@ public class ParalellTest {
 
 	}
 
-	@Test(groups = "Account Creation", dependsOnGroups = { "Launch" })
-	public void googleAccCreation() {
+	@Test(groups = "Account Creation", dependsOnGroups = { "Launch" }, 
+	dataProvider = "googleUserData")
+	public void googleAccCreation(String fName, String lName) {
 		System.out.println("Inside googleAccCreation");
 
 		String baseUrl = "https://accounts.google.com/signup/v2?biz=true&flowEntry=SignUp";
@@ -46,11 +45,11 @@ public class ParalellTest {
 
 		// Let's locate the first name text field by its id.
 		WebElement firstNameTF = driver.findElement(By.id("firstName"));
-		firstNameTF.sendKeys("Myname");
+		firstNameTF.sendKeys(fName) ;//("Myname");
 
 		// Let's locate the surname name text field by its name.
 		WebElement surNameTF = driver.findElement(By.name("lastName"));
-		surNameTF.sendKeys("latName");
+		surNameTF.sendKeys(lName) ;//("latName");
 
 		// The Next button using its class
 		WebElement nextButton = driver.findElement(By.className("VfPpkd-vQzf8d"));
@@ -66,6 +65,14 @@ public class ParalellTest {
 		driver.get(baseUrl);
 
 		System.out.println("Google Title is " + driver.getTitle());
+	}
+	
+	@DataProvider(name = "googleUserData")
+	public Object[][] createData1() {
+	 return new Object[][] {
+		 {"fname1","lname1"},
+		 {"fname2","lname2"}
+	 };
 	}
 
 	@BeforeClass
