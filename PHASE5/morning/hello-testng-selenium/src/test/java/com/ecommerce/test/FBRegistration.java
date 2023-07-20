@@ -78,6 +78,7 @@ public class FBRegistration {
 
 	@BeforeSuite
 	public void beforeSuite() {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\HomeWk\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
         driver.get(baseUrl);
 	}

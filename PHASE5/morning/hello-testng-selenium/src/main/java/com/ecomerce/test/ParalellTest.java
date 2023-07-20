@@ -107,6 +107,7 @@ public class ParalellTest {
 
 	@BeforeClass
 	public void beforeClass() {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\HomeWk\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 
