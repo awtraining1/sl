@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="methods" name="Test FaceBook(failed)">
     <classes>
       <class name="com.ecommerce.test.FBRegistration">
         <methods>
           <include name="beforeClass"/>
           <include name="afterTest"/>
+          <include name="fbAccount"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>
           <include name="afterClass"/>
-          <include name="searchGoogle"/>
+          <include name="testLocalPage"/>
           <include name="afterSuite"/>
           <include name="afterMethod"/>
           <include name="beforeTest"/>
+          <include name="f1"/>
         </methods>
       </class> <!-- com.ecommerce.test.FBRegistration -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test FaceBook(failed) -->
 </suite> <!-- Failed suite [Suite] -->
