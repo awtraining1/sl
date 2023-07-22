@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script>
+        console.log("*** CALL DEMO *****");
+        employee1 = {
+
+            name: "EmpName1",
+            age: 67,
+            
+        };
+
+        function getDetails() { return `\n ${this.name} , ${this.age}  `};
+
+        function getDetailsV2(retirementAge, phoneNo) { 
+            return `\n ${this.name} , ${this.age}, ${phoneNo}, no-of-service-years-left=${retirementAge-this.age} `
+        };
+
+        let e1Details = getDetails.call(employee1);
+        console.log(e1Details);
+
+        let e1DetailsV2 =getDetailsV2.call(employee1, 70, 6783636366);
+        console.log(e1DetailsV2);
+
+    </script>
+
+
+<script>
+    console.log("*** APPLY DEMO *****");
+    employee2 = {
+
+        name: "EmpName2",
+        age: 45,
+        
+    };
+
+    function getDetails2() { return `\n ${this.name} , ${this.age}  `};
+
+    function getDetails2V2(retirementAge, phoneNo) { 
+        return `\n ${this.name} , ${this.age}, ${phoneNo}, no-of-service-years-left=${retirementAge-this.age} `
+    };
+
+    let e2Details = getDetails2.apply(employee1);
+    console.log(e2Details);
+
+    let e2DetailsV2 =getDetails2V2.apply(employee1, [70, 6783636366]);
+    console.log(e2DetailsV2);
+
+</script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>
