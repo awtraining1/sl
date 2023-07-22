@@ -30,8 +30,7 @@
     employee2 = {
 
         name: "EmpName2",
-        age: 45,
-        
+        age: 45,        
     };
 
     function getDetails2() { return `\n ${this.name} , ${this.age}  `};
@@ -45,6 +44,25 @@
 
     let e2DetailsV2 =getDetails2V2.apply(employee1, [70, 6783636366]);
     console.log(e2DetailsV2);
+
+</script>
+
+<script>
+    console.log("*** BIND DEMO *****");
+    // Bind returns a function that can be used any number of times afterwards.
+    employee3 = {
+
+        name: "EmpName3",
+        age: 45,        
+    };    
+
+    function getDetails3(retirementAge, phoneNo) { 
+        return `\n ${this.name} , ${this.age}, ${phoneNo}, no-of-service-years-left=${retirementAge-this.age} `
+    };   
+
+    let f1 = getDetails3.bind(employee3);
+    let e3Details = f1(3643646464, 70);
+    console.log(e3Details);
 
 </script>
 
