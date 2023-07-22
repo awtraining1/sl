@@ -1,0 +1,28 @@
+<script>
+    console.log("**** SPREAD OPERATOR DEMO ***")
+
+    let a1Arr = [16, 4, 56, 77, 23, 15, 17];
+
+    const add = (x, y, z) => x + y + z;
+
+    // console.log(add(16,4, 56));
+    console.log(add(a1Arr[0], a1Arr[1], a1Arr[2]));
+
+    // same result using spread operator
+    console.log(add(...a1Arr));
+
+</script>
+
+
+<script>
+    console.log("**** REST OPERATOR DEMO ***")
+
+    let a2Arr = [16, 4, 56, 77, 23, 15, 17];
+
+    let [a, b, c, ...a2RestAfterFirstTwo] = a2Arr;
+
+    console.log(a);
+    console.log(b);
+    console.log(a2RestAfterFirstTwo);
+
+</script>

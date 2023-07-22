@@ -12,7 +12,11 @@
 
         function getDetails() { return `\n ${this.name} , ${this.age}  `};
 
-        function getDetailsV2(retirementAge, phoneNo) { 
+        // function getDetailsV2(retirementAge, phoneNo) { 
+        //     return `\n ${this.name} , ${this.age}, ${phoneNo}, no-of-service-years-left=${retirementAge-this.age} `
+        // };
+
+        getDetailsV2 = (retirementAge, phoneNo) => { 
             return `\n ${this.name} , ${this.age}, ${phoneNo}, no-of-service-years-left=${retirementAge-this.age} `
         };
 
@@ -56,12 +60,18 @@
         age: 45,        
     };    
 
-    function getDetails3(retirementAge, phoneNo) { 
+    //  function getDetails3(retirementAge, phoneNo) { 
+    //     return `\n ${this.name} , ${this.age}, ${phoneNo}, no-of-service-years-left=${retirementAge-this.age} `
+    // };  
+    getDetails3 = function (retirementAge, phoneNo) { 
         return `\n ${this.name} , ${this.age}, ${phoneNo}, no-of-service-years-left=${retirementAge-this.age} `
-    };   
+    };
+    // getDetails3 = (retirementAge, phoneNo) => { 
+    //     return `\n ${this.name} , ${this.age}, ${phoneNo}, no-of-service-years-left=${retirementAge-this.age} `
+    // };
 
-    let f1 = getDetails3.bind(employee3);
-    let e3Details = f1(3643646464, 70);
+    let f1 = getDetails3.bind(employee3, 3643646464, 70);
+    let e3Details = f1();
     console.log(e3Details);
 
 </script>
