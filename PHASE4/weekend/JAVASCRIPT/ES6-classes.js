@@ -12,6 +12,8 @@ class Bus{
     getName = () => this.name;
     getModelYr = () => this.modelYr;
 
+    static hello = () => console.log("hello static");
+
 };
 
 

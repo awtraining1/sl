@@ -1,7 +1,7 @@
 <script>
     console.log("**** SPREAD OPERATOR DEMO ***")
 
-    let a1Arr = [16, 4, 56, 77, 23, 15, 17];
+    let a1Arr = [6, 4, 5, 77, 23, 15, 17];
 
     const add = (x, y, z) => x + y + z;
 
@@ -10,6 +10,11 @@
 
     // same result using spread operator
     console.log(add(...a1Arr));
+
+    const mul = (x=2, y, z) => x * y * z;
+    console.log("MULTIPLY = " + mul(...a1Arr)); //120
+    console.log("MULTIPLY 2 = " + mul(10, ...a1Arr));
+
 
 </script>
 
