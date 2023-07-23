@@ -21,7 +21,7 @@ let bus3 : Bus = new Bus("ford",100, 90, "petrol"); // in TS
 
 console.log(bus3.engineType); // WORKs
 
-// bus3.engineType="GAS"; // ERROR readonly cannot be modified
+// bus3.engineType="GAS"; // ERROR readonly property cannot be modified
 
 bus3.name; // name is public, so fine to access here
 bus3.name = "Toyata";
