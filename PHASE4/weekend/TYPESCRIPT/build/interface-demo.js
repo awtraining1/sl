@@ -17,3 +17,11 @@ class ABC {
     }
 }
 // let abc1:ABC = new ABC(); // ERROR
+class MyABC extends ABC {
+    walkSlow() {
+        console.log("Walking ...., slowing walking");
+    }
+}
+let abc1 = new MyABC();
+abc1.walkNormal();
+abc1.walkSlow();
