@@ -1,4 +1,4 @@
-enum ModelYear { Year2020=2020, Year2021, Year2022, Year2023 }
+enum ModelYear { Year2020=2015, Year2021, Year2022, Year2023 }
 
 
 class Bike{
@@ -15,3 +15,5 @@ class Bike{
 }
 
 let bike1 : Bike =  new Bike("Bullet", 100, ModelYear.Year2023 );
+
+console.log(`Bike 1 model is ${bike1.modelYr}`);
