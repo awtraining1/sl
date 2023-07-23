@@ -1,3 +1,5 @@
+import {Person} from './interface-demo';
+
 let myArr1 = []; // in Plain JS
 
 

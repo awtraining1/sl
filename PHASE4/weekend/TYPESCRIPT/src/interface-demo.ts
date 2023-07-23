@@ -5,7 +5,7 @@ interface Human{
 }
 
 
-class Person implements Human{
+export class Person implements Human{
     name:string;
 
     constructor(name:string){

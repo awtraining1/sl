@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Person = void 0;
 class Person {
     constructor(name) {
         this.name = name;
@@ -7,6 +9,7 @@ class Person {
         console.log("Walking ...., fast walking");
     }
 }
+exports.Person = Person;
 ;
 let per1 = new Person("Sujata");
 per1.walkFast();
