@@ -30,7 +30,7 @@ public class FBRegistration2 {
 
 	SoftAssert softAssert =  new SoftAssert();
 	
-	@Test(groups = { "Google" })
+	@Test(groups = { "Google", "Account Creation" })
 	public void searchGoogleAndTestTitleText() {
 		System.out.printf("Inside %s and thread-id is %s \n", "searchGoogle", Thread.currentThread().getId());
 
