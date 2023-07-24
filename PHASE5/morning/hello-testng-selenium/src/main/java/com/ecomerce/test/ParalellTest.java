@@ -119,7 +119,7 @@ public class ParalellTest {
 		caps.setBrowserName("chrome");
 		
 		try {
-			driver = new RemoteWebDriver(new URL("http://192.168.99.1:4444"), caps);
+			driver = new RemoteWebDriver(new URL("http://192.168.99.1:4444/wd/hub"), caps);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
