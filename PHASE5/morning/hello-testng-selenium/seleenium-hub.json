@@ -1,5 +1,5 @@
 {
- "port": 4440,
+ "port": 44440,
  "newSessionWaitTimeout": 12000,
  "servlets" : [],
  "withoutServlets": [],

@@ -2,9 +2,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <!-- <test thread-count="5" name="Test FaceBook" parallel="methods"> -->
-   <test thread-count="5" name="Test FaceBook" parallel="methods">
+   <test name="Test FaceBook" >
     <classes>
-      <class name="com.ecommerce.test.FBRegistration"/>
+      <!-- class name="com.ecommerce.test.FBRegistration"/>  -->
+      <class name="com.ecommerce.test.FBRegistration2"/>
     </classes>
   </test> <!-- Test -->
   
