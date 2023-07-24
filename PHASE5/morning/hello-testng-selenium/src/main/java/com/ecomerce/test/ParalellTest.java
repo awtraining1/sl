@@ -1,9 +1,14 @@
 package com.ecomerce.test;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -107,8 +112,19 @@ public class ParalellTest {
 
 	@BeforeClass
 	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\HomeWk\\Downloads\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver","C:\\Users\\HomeWk\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setPlatform(Platform.WIN10);
+		caps.setBrowserName("chrome");
+		
+		try {
+			driver = new RemoteWebDriver(new URL("http://192.168.99.1:4444"), caps);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
+		//driver = new ChromeDriver();
 	}
 
 	@AfterClass
