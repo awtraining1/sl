@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    tools {
+		// Install the Maven version configured as "M3" and add it to the path.
+        maven "maven1"
+	}
+
+    stages {
+        stage('Build') {
+            steps {
+				// Get some code from a GitHub repository
+                git branch: 'main', url: 'https: //github.com/awtraining1/sl'
+				// Run Maven on a Unix agent.
+				// To run Maven on a Windows agent, use
+                dir('PHASE3/afternoon/spring-boot-mvc-demo') {
+					// some block
+                bat "mvn -Dmaven.test.failure.ignore=true clean package"
+				}
+				//bat "cd PHASE3/afternoon/spring-boot-mvc-demo;mvn -Dmaven.test.failure.ignore=true clean package"
+			}
+
+            post {
+				// If Maven was able to run the tests, even if some of the test
+				// failed, record the test results and archive the jar file.
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    dir('PHASE3/afternoon/spring-boot-mvc-demo') {
+                    archiveArtifacts 'target/*.jar'
+                    											}
+                		}
+            	}
+            	
+            	stage('Build Docker image') {
+            steps {
+                	dir('PHASE3/afternoon/spring-boot-mvc-demo') {
+                    bat 'docker build -t my-springboot-app .'
+                    }
+                
+            }
+        }
+        	}
+    }
+    
+    
+}
