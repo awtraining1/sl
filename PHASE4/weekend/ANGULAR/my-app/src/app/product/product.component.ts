@@ -9,6 +9,24 @@ export class ProductComponent {
 
   @Input("name") name:string="";
 
-  @Input("price") price:number=0;
+  @Input("price") price!:number;
+
+  date_added!:string;
+
+  constructor(){
+    console.log("Inside constructor");
+  }
+
+  ngOnChanges():void{
+    console.log("Inside ngOnChanges");
+  }
+
+  ngOnInit():void{
+    console.log("Inside ngOnInit");
+  }
+
+  ngOnDestroy():void{
+    console.log("Inside ngOnDestroy");
+  }
 
 }
