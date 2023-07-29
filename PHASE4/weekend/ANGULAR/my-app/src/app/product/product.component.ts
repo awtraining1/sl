@@ -10,6 +10,7 @@ export class ProductComponent {
 
   @Input("name") name:string="";
   @Input("price") price!:number;
+  @Input("isSpecial") isSpecial!:boolean;
 
   product!:Product;
 
@@ -26,7 +27,7 @@ export class ProductComponent {
     // Build the product by accepting the default values set by 
     // Parent component (Productlist Component). Rest go with the default values
     // as defined in the Product class constructor.
-    this.product = new Product(this.name, this.price, true);
+    this.product = new Product(this.name, this.price, this.isSpecial);
   }
 
   ngOnDestroy():void{
