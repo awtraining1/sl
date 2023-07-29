@@ -24,9 +24,9 @@ export class ProductComponent {
   ngOnInit():void{
     console.log("Inside ngOnInit");
     // Build the product by accepting the default values set by 
-    // Parent component (Productlist Component). Rest go with the default vales
+    // Parent component (Productlist Component). Rest go with the default values
     // as defined in the Product class constructor.
-    this.product = new Product(this.name, this.price);
+    this.product = new Product(this.name, this.price, true);
   }
 
   ngOnDestroy():void{

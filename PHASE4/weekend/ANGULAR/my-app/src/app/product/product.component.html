@@ -1,7 +1,11 @@
 <div style="border: blue dotted 1px">
 
-<div>Name: <b> {{ name  }}</b></div>
-<div>Price: {{ price }}</div>
+<div  [style.color]="product.isSpecial ? 'red': 'green'" >Name: <b> {{ product.name  }}</b></div>
+<div>Price: {{ product.price }}</div>
+
+<img [src]="product.imageUrl">
+
+<div>Date Added: {{ product.dateAdded }}</div>
 
 
 </div>
