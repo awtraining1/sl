@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'product',
@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
-  name:string='HP Laptop';
-  price:number=0;
+  @Input("name") name:string="";
+
+  @Input("price") price:number=0;
 
 }
