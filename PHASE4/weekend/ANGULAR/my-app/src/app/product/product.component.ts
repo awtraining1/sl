@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Product } from '../product';
 
 @Component({
   selector: 'product',
@@ -8,10 +9,9 @@ import { Component, Input } from '@angular/core';
 export class ProductComponent {
 
   @Input("name") name:string="";
-
   @Input("price") price!:number;
 
-  date_added!:string;
+  product!:Product;
 
   constructor(){
     console.log("Inside constructor");
@@ -23,6 +23,10 @@ export class ProductComponent {
 
   ngOnInit():void{
     console.log("Inside ngOnInit");
+    // Build the product by accepting the default values set by 
+    // Parent component (Productlist Component). Rest go with the default vales
+    // as defined in the Product class constructor.
+    this.product = new Product(this.name, this.price);
   }
 
   ngOnDestroy():void{
