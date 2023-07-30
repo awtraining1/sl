@@ -14,9 +14,15 @@ export class ProductComponent {
 
   product!:Product;
 
+  like():void{
+    console.log("Somebody liked me ");
+  }
+
   constructor(){
     console.log("Inside constructor");
   }
+
+
 
   ngOnChanges():void{
     console.log("Inside ngOnChanges");
