@@ -14,8 +14,12 @@ export class ProductComponent {
 
   product!:Product;
 
-  like():void{
-    console.log("Somebody liked me ");
+  likeCounter:number=0;
+
+  like(evt:any, val:number):void{
+    this.likeCounter =this.likeCounter+ val;
+    console.log(`I am being liked ${this.likeCounter} times`);
+    console.log(`Event Details :  ${evt.target.type}  ${evt.target.name}`);
   }
 
   constructor(){
