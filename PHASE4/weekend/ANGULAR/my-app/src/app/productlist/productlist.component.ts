@@ -9,16 +9,20 @@ export class ProductlistComponent {
 
  initialPriceFromParent:number=100;
 
+ parentFunc1(evt:any):void{
+  console.log(`Got an event from the child. \n Message from the child - ${evt}`);
+  }
+
   constructor(){
-    console.log("Inside productlist constructor");
+    //console.log("Inside productlist constructor");
   }
 
   ngOnChanges():void{
-    console.log("Inside productlist ngOnChanges");
+    //console.log("Inside productlist ngOnChanges");
   }
 
   ngOnInit():void{
-    console.log("Inside  productlist ngOnInit");
+    //console.log("Inside  productlist ngOnInit");
   }
 
   ngOnDestroy():void{
@@ -26,19 +30,19 @@ export class ProductlistComponent {
   }
 
   ngAfterContentInit():void{
-    console.log("Inside productlist ngAfterContentInit");
+    //console.log("Inside productlist ngAfterContentInit");
   }
 
   ngAfterContentChecked():void{
-    console.log("Inside productlist ngAfterContentChecked");
+    //console.log("Inside productlist ngAfterContentChecked");
   }
 
   ngAfterViewInit():void{
-    console.log("Inside  productlist ngAfterViewInit");
+    //console.log("Inside  productlist ngAfterViewInit");
   }
 
   ngAfterViewChecked():void{
-    console.log("Inside ngAfterViewChecked");
+    //console.log("Inside ngAfterViewChecked");
   }
 
 }

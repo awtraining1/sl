@@ -13,5 +13,14 @@
 <button name="button1" class="btn btn-primary" (click)="like($event, 1)"> Like </button>
 
 <button name="button2" class="btn btn-primary" (click)="like($event, -1)"> UnLike </button>
+<br><br>
+<span (click)="f1()" style="background-color:yellow;" >Click me, I will fire myEvent </span>
+
+<!-- <br><br>
+Add your Comments : <input type="text"  (input)="addComments(comment.value)" #comment>  -->
+
+<br><br>
+Any suggestions for renaming the product?  : <input type="text" [(ngModel)]="product.name"> 
+
 
 </div>

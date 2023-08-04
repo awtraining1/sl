@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input , Output, EventEmitter } from '@angular/core';
 import { Product } from '../product';
 
 @Component({
@@ -15,6 +15,13 @@ export class ProductComponent {
   product!:Product;
 
   likeCounter:number=0;
+
+  //Custom Event
+  @Output() myEvent = new EventEmitter<string>;
+
+  f1():void{
+    this.myEvent.emit(`Hi Parent, my like score is ${this.likeCounter}`);
+  }
 
   like(evt:any, val:number):void{
     this.likeCounter =this.likeCounter+ val;
