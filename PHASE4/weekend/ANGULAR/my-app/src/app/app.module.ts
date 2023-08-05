@@ -17,8 +17,7 @@ const routes = [
   {path: 'product', component: ProductComponent},
   {path: 'product-list', component: ProductlistComponent },
   {path: 'product-list-v2', component: ProductListV2Component },
-  {path: '*', component: NoSuchPageComponent },
-  //Fallback  router
+  {path: '*', component: NoSuchPageComponent },  //Fallback  router
   ];
 
 @NgModule({
@@ -29,7 +28,7 @@ const routes = [
     AddProductComponent,
     ProductListV2Component,
     HighLightDirective,
-    NoSuchPageComponentComponent
+    NoSuchPageComponent
   ],
   imports: [
     BrowserModule,
