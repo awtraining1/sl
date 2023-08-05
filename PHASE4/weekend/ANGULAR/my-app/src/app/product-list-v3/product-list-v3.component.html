@@ -1,1 +1,28 @@
-<p>product-list-v3 works!</p>
+<table class="table bordered">
+    <tr>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>SPECIAL</th>
+        <th>IN STOCK</th>
+    </tr>
+    <div *ngIf="products.length>0">
+        LIST of Products<br>
+        <div *ngFor="let prod of products">
+
+            <tr>
+                <!-- <td> <img [src]="prod.imgSrc" width="150px" height="120px"> -->
+                <td highlight> {{prod.name}}
+                <td> {{prod.price}}
+                <td>
+                    <div [style.color]="prod.isSpecial ? 'red': 'green'">This product is Special</div>
+                <td>
+                    <div [class.inStock]="prod.inStock">This product is in Stock</div>
+
+            </tr>
+
+        </div>
+    </div>
+
+    <div *ngIf="products.length==0">
+        No Products to show
+    </div>

@@ -14,10 +14,13 @@ import { NoSuchPageComponent } from './no-such-page-component/no-such-page-compo
 import { Routes, RouterModule } from '@angular/router';
 import { ProductListV3Component } from './product-list-v3/product-list-v3.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 const routes :Routes = [
   {path: 'add-product', component: AddProductComponent},
   {path: 'product-list', component: ProductlistComponent },
   {path: 'product-list-v2', component: ProductListV2Component },
+  {path: 'product-list-v3', component: ProductListV3Component },
   {path: '**', component: NoSuchPageComponent },  //Fallback  router
   ];
 
@@ -33,7 +36,7 @@ const routes :Routes = [
     ProductListV3Component
   ],
   imports: [
-    BrowserModule,    FormsModule,    ReactiveFormsModule,
+    BrowserModule,    FormsModule,    ReactiveFormsModule, HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   exports:[RouterModule],
