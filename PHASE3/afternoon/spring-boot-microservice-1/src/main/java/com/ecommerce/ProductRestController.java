@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/product")
-@CrossOrigin("localhost:8081")
+@CrossOrigin(origins = {"http://localhost:8081", "http://localhost:4200"})
 public class ProductRestController {
 	
 	@Autowired
 	EProductRepositry eProductRepo;
 	
-	// List all the products
+	// List all the products	
 	@GetMapping(path="/list", produces = "application/json")
 	public List<EProduct> listProducts(){
 		List<EProduct> products = eProductRepo.findAll();
