@@ -12,4 +12,32 @@
 <br><br>
 <router-outlet></router-outlet>
 
+<h2>Decimal Pipe Example</h2>
+<p>pi (no formatting): {{pi}}</p>
+<p>pi (.5-5): {{pi | number:'.5-5'}}</p>
+<p>pi (2.10-10): {{pi | number:'2.10-10'}}</p>
+<p>pi (.3-3): {{pi | number:'.3-3'}}</p>
+
+<h2>Currency Pipe Example</h2>
+<p>A in USD: {{a | currency:'USD':true}}</p>
+<p>B in INR: {{b |
+currency:'INR':false:'4.2-2'}}</p>
+
+<h2>Pipe Example</h2>
+<h4>1. Today is {{today}}</h4>
+<h4>2. Today is {{today | date}}</h4>
+<h4>3. Today is {{today | date:"dd/MM/yyyy"}}</h4>
+
+<h2>JSON Pipe Example</h2>
+<h4>Without JSON Pipe.</h4>
+{{obj}}
+<h4>With JSON Pipe.</h4>
+{{obj | json}}
+
+<h2>Our Custom Pipe Example (Trim)</h2>
+<h4>Without Trim Pipe.</h4>
+*{{'   blah blah    '}}*
+
+<h4>With Trim Pipe.</h4>
+*{{'   blah blah    ' | trim }}*
 </html>

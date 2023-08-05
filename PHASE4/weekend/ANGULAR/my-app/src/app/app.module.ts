@@ -15,6 +15,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductListV3Component } from './product-list-v3/product-list-v3.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { TrimPipe } from './trim.pipe';
 
 const routes :Routes = [
   {path: 'add-product', component: AddProductComponent},
@@ -33,7 +34,8 @@ const routes :Routes = [
     ProductListV2Component,
     HighLightDirective,
     NoSuchPageComponent,
-    ProductListV3Component
+    ProductListV3Component,
+    TrimPipe
   ],
   imports: [
     BrowserModule,    FormsModule,    ReactiveFormsModule, HttpClientModule,
