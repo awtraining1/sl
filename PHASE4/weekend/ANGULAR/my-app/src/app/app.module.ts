@@ -8,6 +8,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ProductService } from './product.service';
 import { ProductListV2Component } from './product-list-v2/product-list-v2.component';
+import { HighLightDirective } from './high-light.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductListV2Component } from './product-list-v2/product-list-v2.compon
     ProductComponent,
     ProductlistComponent,
     AddProductComponent,
-    ProductListV2Component
+    ProductListV2Component,
+    HighLightDirective
   ],
   imports: [
     BrowserModule,
