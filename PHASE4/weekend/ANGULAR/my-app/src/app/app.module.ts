@@ -11,14 +11,13 @@ import { ProductListV2Component } from './product-list-v2/product-list-v2.compon
 import { HighLightDirective } from './high-light.directive';
 import { NoSuchPageComponent } from './no-such-page-component/no-such-page-component.component';
 
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes = [
-  {path: '', redirectTo: 'product-list-v2'}, //Index router
-  {path: 'product', component: ProductComponent},
+const routes :Routes = [
+  {path: 'add-product', component: AddProductComponent},
   {path: 'product-list', component: ProductlistComponent },
   {path: 'product-list-v2', component: ProductListV2Component },
-  {path: '*', component: NoSuchPageComponent },  //Fallback  router
+  {path: '**', component: NoSuchPageComponent },  //Fallback  router
   ];
 
 @NgModule({
@@ -35,6 +34,7 @@ const routes = [
     BrowserModule,    FormsModule,    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
+  exports:[RouterModule],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })

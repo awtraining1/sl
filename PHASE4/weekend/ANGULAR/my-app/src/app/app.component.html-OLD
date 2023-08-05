@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<h1 style="text-align: center;">Welcome to ECommerce</h1>
+
+<product-list-v2></product-list-v2>
+
+<div class="row">
+    <div class="col-3">
+<add-product></add-product>
+</div>
+</div>
+
+<!-- 
+<product></product>
+<product></product>
+<product></product>
+<product></product> -->
+
+<br><br>
+
+<productlist></productlist>
+
+</html>

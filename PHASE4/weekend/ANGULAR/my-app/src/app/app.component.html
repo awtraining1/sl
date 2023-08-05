@@ -3,22 +3,10 @@
 
 <h1 style="text-align: center;">Welcome to ECommerce</h1>
 
-<product-list-v2></product-list-v2>
+<a [routerLink]="['/product-list']"> Product List </a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/product-list-v2']"> Product List V2 </a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/add-product']"> Add NewProduct </a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-<div class="row">
-    <div class="col-3">
-<add-product></add-product>
-</div>
-</div>
-
-<!-- 
-<product></product>
-<product></product>
-<product></product>
-<product></product> -->
-
-<br><br>
-
-<productlist></productlist>
+<router-outlet></router-outlet>
 
 </html>
