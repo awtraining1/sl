@@ -11,6 +11,7 @@ import { ProductListV2Component } from './product-list-v2/product-list-v2.compon
 import { HighLightDirective } from './high-light.directive';
 import { NoSuchPageComponent } from './no-such-page-component/no-such-page-component.component';
 
+import { RouterModule } from '@angular/router';
 
 const routes = [
   {path: '', redirectTo: 'product-list-v2'}, //Index router
@@ -31,9 +32,8 @@ const routes = [
     NoSuchPageComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule
+    BrowserModule,    FormsModule,    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
