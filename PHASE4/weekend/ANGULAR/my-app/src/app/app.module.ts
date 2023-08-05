@@ -9,6 +9,17 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ProductService } from './product.service';
 import { ProductListV2Component } from './product-list-v2/product-list-v2.component';
 import { HighLightDirective } from './high-light.directive';
+import { NoSuchPageComponent } from './no-such-page-component/no-such-page-component.component';
+
+
+const routes = [
+  {path: '', redirectTo: 'product-list-v2'}, //Index router
+  {path: 'product', component: ProductComponent},
+  {path: 'product-list', component: ProductlistComponent },
+  {path: 'product-list-v2', component: ProductListV2Component },
+  {path: '*', component: NoSuchPageComponent },
+  //Fallback  router
+  ];
 
 @NgModule({
   declarations: [
@@ -17,7 +28,8 @@ import { HighLightDirective } from './high-light.directive';
     ProductlistComponent,
     AddProductComponent,
     ProductListV2Component,
-    HighLightDirective
+    HighLightDirective,
+    NoSuchPageComponentComponent
   ],
   imports: [
     BrowserModule,
