@@ -12,6 +12,7 @@ import { HighLightDirective } from './high-light.directive';
 import { NoSuchPageComponent } from './no-such-page-component/no-such-page-component.component';
 
 import { Routes, RouterModule } from '@angular/router';
+import { ProductListV3Component } from './product-list-v3/product-list-v3.component';
 
 const routes :Routes = [
   {path: 'add-product', component: AddProductComponent},
@@ -28,7 +29,8 @@ const routes :Routes = [
     AddProductComponent,
     ProductListV2Component,
     HighLightDirective,
-    NoSuchPageComponent
+    NoSuchPageComponent,
+    ProductListV3Component
   ],
   imports: [
     BrowserModule,    FormsModule,    ReactiveFormsModule,

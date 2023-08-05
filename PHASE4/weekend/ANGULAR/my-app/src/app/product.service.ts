@@ -10,6 +10,7 @@ import { Observable, throwError } from 'rxjs';
 })
 export class ProductService {
 
+  //SpringBoot project host URL
   backEndUrl :String = "http://localhost:8080/api/product/v1";
 
   constructor(private httpClient: HttpClient) { };
